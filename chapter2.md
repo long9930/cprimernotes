@@ -94,7 +94,104 @@ Characters have special meanings in the laguage.
 * If \ is followed by more than 3 octal digits, only the first 3 are assoiated with the \.*For example, \1234 represents two characters: the character represented by \123 and character 4*; in contrast,\x uses up all the hex digits following it.*For example,\x1234* is one character.
 
 
-## 2.2
+## 2.2. Variables
+A variable provides us with named storage that our programs can manipulate.
+###2.2.1. Variable Definitions
+A simple variable definition consists of a <mark>type specifier</mark>, followed by a list of one or more variable names separated by commas, and ends with a semicolon. Each name in the list has the type defined by the type specifier. A definition may (optionally) provide an initial value for one or more of the names it defines:
+
+```cpp
+int sum = 0, value, // sum, value, and units_sold have type int 
+    units_sold = 0; // sum and units_sold have initial value 0
+Sales_item item; // item has type Sales_item (see § 1.5.1 (p. 20))
+// string is a library type, representing a variable-length sequence of characters 
+std::string book("0-201-78345-X"); // book initialized from string literal
+```
+* The definition of book uses the std::string library type.
+
+####Initializers
+An object that is initialized gets the specified value at the moment it is created. The values used to initialize a variable can be arbitrarily complicated expressions. When a definition defines two or more variables, the name of each object becomes visible immediately. Thus, it is possible to initialize a variable to the value of one defined earlier in the same definition.
+
+```cpp
+// ok: price is defined and initialized before it is used to initialize discount 
+double price = 109.99, discount = price * 0.16;
+// ok: call applyDiscount and use the return value to initialize salePrice
+double salePrice = applyDiscount(price, discount);
+```
+*Initialization is not assignment. Initialization happens when a variable is given a value when it is created. Assignment obliterates an object’s current value and replaces that value with a new one.
+ 
+####List Initialization
+We can use any of the following four different ways to define an int variable named units_sold and initialize it to 0:
+
+```cpp
+int units_sold = 0; 
+int units_sold = {0}; 
+int units_sold{0}; 
+int units_sold(0);
+```
+* For reasons we’ll learn about in § 3.3.1 (p. 98), this form of initialization is referred to as <mark>list initialization</mark>. 
+
+When used with variables of built-in type, this form of initialization has one important property: The compiler will not let us list initialize variables of built-in type if the initializer might lead to the loss of information:
+
+```cpp
+long double ld = 3.1415926536;
+int a{ld}, b = {ld}; // error: narrowing conversion required 
+int c(ld), d = ld; // ok: but value will be truncated
+```
+
+The compiler rejects the initializations of a and b because using a long double to initialize an int is likely to lose data. At a minimum, the fractional part of ld will be truncated. In addition, the integer part in ld might be too large to fit in an int.
+
+####Default Initialization
+When we define a variable without an initializer, the variable is <mark>default initialized</mark>.
+
+The value of an object of built-in type that is not explicitly initialized depends on where it is defined.Variables defined outside any function body are initialized to zero. With one exception, which we cover in § 6.1.1 (p. 205), variables of built-in type defined inside a function are uninitialized. The value of an uninitialized variable of built-in type is undefined (§ 2.1.2, p. 36).
+
+Most classes let us define objects without explicit initializers. Such classes supply an appropriate default value for us. Some classes require that every object be explicitly initialized. The compiler will complain if we try to create an object of such a class with no initializer.
+
+```cpp
+std::string empty; // empty implicitly initialized to the empty string
+Sales_item item; // default-initialized Sales_item object
+```
+###2.2.2. Variable Declarations and Definitions
+We recommend initializing every object of built-in type. It is not always necessary, but it is easier and safer to provide an initializer until you can be certain it is safe to omit the initializer.
+ 
+ A <mark>declaration</mark> makes a name known to the program. A variable declaration specifies the type and name of a variable. A variable definition is a declaration. In addition to specifying the name and type, a definition also allocates storage and may provide the variable with an initial value. An extern that has an initializer is a <mark>definition</mark>.
+
+```cpp
+extern int i; // declares but does not define i 
+int j; // declares and defines j
+extern double pi = 3.1416; // definition
+```
+* It is an error to provide an initializer on an extern inside a function.
+* To use a variable in more than one file requires declarations that are separate from the variable’s definition. To use the same variable in multiple files, we must define that variable in one—and only one—file. Other files that use that variable must declare—but not define—that variable.
+
+####2.2.3. Identifiers
+The language imposes no limit on name length. <mark>Identifiers</mark> must begin with either a letter or an underscore. Identifiers are case-sensitive.
+
+C++ Keywords and C++ Alternative Operator Names (refer to the book) cannot be used as identifiers.
+
+Conventions:
+
+* Variable names normally are lowercase—index, not Index or INDEX.
+*  Like Sales_item, classes we define usually begin with an uppercase letter.
+
+####2.2.4. Scope of a Name
+A <mark>scope</mark> is a part of the program in which a name has a particular meaning. Most scopes in C++ are delimited by curly braces.
+
+```cpp
+#include <iostream>
+// Program for illustration purposes only: It is bad style for a function
+// to use a global variable and also define a local variable with the same name int reused = 42; // reused has global scope
+int main()
+{
+int unique = 0; // unique has block scope
+// output #1: uses global reused; prints 42 0
+std::cout << reused << " " << unique << std::endl;
+int reused = 0; // new, local object named reused hides global reused // output #2: uses local reused; prints 0 0
+std::cout << reused << " " << unique << std::endl;
+// output #3: explicitly requests the global reused; prints 42 0
+std::cout << ::reused << " " << unique << std::endl;
+return 0; }
+```
 
 ## 2.3 Compound Type
 ### 2.3.1 References
