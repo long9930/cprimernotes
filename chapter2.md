@@ -96,7 +96,120 @@ Characters have special meanings in the laguage.
 
 ## 2.2
 
-## 2.3
+## 2.3 Compound Type
+### 2.3.1 References
+**Reference** type defines an alternative name for an object.
+Once it's bound to an object, it could not be rebound to another object.
+
+```cpp
+int ival = 1024;
+int &refVal = ival;
+int &refVal2; // error: must be initialized.
+int &refVal3 = 2048; //error: must be bound to an object.
+```
+
+### 2.3.2 Pointers
+A **pointer** holds the address of another object. The reference variable does not have an address.
+
+
+```cpp
+int ival = 1024;
+int *p = &ival;
+*p = 2; //* yields the object; we assign value to ival
+```
+
+```cpp
+int *p1 = nullptr;
+int *p2 = 0;
+int *p3 = NULL; // must #include cstdlib
+```
+
+*NULL* is a preprocessor variable, which is contained in the header *cstdlib*. Modern C++ programs should avoid using *NULL* and use *nullptr* instead.
+
+```cpp
+int i = 42;
+int *pi = 0;   // pi is initialized but addresses no object
+int *pi2 = &i; // pi2 initialized to hold the address of i
+int *pi3;      // if pi3 is defined inside a block, pi3 is uninitialized
+pi3 = pi2;        // pi3 and pi2 address the same object, e.g., i
+pi =  &i;
+*pi = 0;          // equivalent to i=0;
+pi2 = 0;          // pi2 now addresses no object
+```
+
+Other pointer operation
+
+1. Use in condition.
+
+```cpp
+int ival = 1024;
+int *pi = 0;      // pi is a valid, null pointer
+int *pi2 = &ival; // pi2 is a valid pointer that holds the address of ival
+if (pi)  // pi has value 0, so condition evaluates as false
+    // ...
+if (pi2) // pi2 points to ival, so it is not 0; the condition evaluates as true
+    // ...
+```
+
+2. Using equality(==) and inequality(!=). Two pointers hold the same address (i.e., are equal) if they are both null, if they address the same object, or if they are both pointers one past the same object.  
+
+```cpp
+int ival = 1024;
+int *pi = 0;      // pi is a valid, null pointer
+int *pi2 = &ival; // pi2 is a valid pointer that holds the address of ival
+if (pi)  // pi has value 0, so condition evaluates as false
+    // ...
+if (pi2) // pi2 points to ival, so it is not 0; the condition evaluates as true
+    // ...
+```
+
+The ```void``` type hold pointers to any type, but we could not use it to operate on the object it points to. Only use it to deal with memory.
+
+```cpp
+double obj = 3.14, *pd = &obj;
+// ok: void* can hold the address value of any data pointer type
+void *pv = &obj;  // obj can be an object of any type
+pv = pd;          // pv can hold a pointer to any type
+```
+
+### Understanding Compound Type
+
+As we’ve seen, a variable definition consists of a base type and a list of declarators. Each declarator can relate its variable to the base type differently from the other declarators in the same definition. Thus, a single definition might define variables of different types:
+
+> Base Declarator
+
+
+```cpp
+// i is an int; p is a pointer to int; r is a reference to int
+int i = 1024, *p = &i, &r = i;
+
+int* p1, p2; // p1 is a pointer to int; p2 is an int
+
+int *p1, *p2; // both p1 and p2 are pointers to int
+```
+
+Pointer to pointer. It must be dereferenced twice.
+
+```cpp
+int ival = 1024;
+int *pi = &ival;    // pi points to an int
+int **ppi = &pi;    // ppi points to a pointer to an int
+cout << "The value of ival\n"
+     << "direct value: " << ival << "\n"
+     << "indirect value: " << *pi << "\n"
+     << "doubly indirect value: " << **ppi
+     << endl;
+```
+
+A reference is not an object. Hence, we may not have a pointer to a reference. However, because a pointer is an object, we can define a reference to a pointer:
+
+```cpp
+int i = 42;
+int *p;        // p is a pointer to int
+int *&r = p;   // r is a reference to the pointer p
+r = &i; //  r refers to a pointer; assigning &i to r makes p point to i
+*r = 0; //  dereferencing r yields i, the object to which p points; changes i to 0
+```
 
 ## 2.4
 
