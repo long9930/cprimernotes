@@ -308,6 +308,8 @@ r = &i; //  r refers to a pointer; assigning &i to r makes p point to i
 *r = 0; //  dereferencing r yields i, the object to which p points; changes i to 0
 ```
 
+he easiest way to understand the type of r is to <mark>read the definition right to left</mark>. The symbol closest to the name of the variable (in this case the & in &r) is the one that has the most immediate effect on the variable’s type. Thus, we know that r is a reference. The rest of the declarator determines the type to which r refers. The next symbol, * in this case, says that the type r refers to is a pointer type. Finally, the base type of the declaration says that r is a reference to a pointer to an int.
+
 ## 2.4
 
 ```cpp
