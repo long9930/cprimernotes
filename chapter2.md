@@ -315,3 +315,63 @@ he easiest way to understand the type of r is to <mark>read the definition right
 ```cpp
 int x;
 ```
+
+##2.5
+
+
+##2.6 Defining Our Own Data Structure
+
+* C++ programs use the preprocessor to define **header guards**, to avoid include the header multiple times.
+* Variables in the structure could be initilized under the new standard.  
+ 
+ ```cpp
+#ifndef SALES_DATA_H
+#define SALES_DATA_H
+#include <string>
+struct Sales_data {
+    std::string bookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+};
+#endif
+ ```
+
+The whole program
+
+```cpp
+#include <iostream>
+#include <string>
+#include "Sales_data.h"
+int main()
+{
+    Sales_data data1, data2;
+    // code to read into data1 and data2
+    double price = 0;   // price per book, used to calculate total revenue
+    // read the first transactions: ISBN, number of books sold, price per book
+    std::cin >> data1.bookNo >> data1.units_sold >> price;
+	data1.revenue = data1.units_sold * price;
+	// read the second transaction
+	std::cin >> data2.bookNo >> data2.units_sold >> price;
+	data2.revenue = data2.units_sold * price;
+
+
+
+	if (data1.bookNo == data2.bookNo) {
+   		 unsigned totalCnt = data1.units_sold + data2.units_sold;
+	   	 double totalRevenue = data1.revenue + data2.revenue;
+   		 // print: ISBN, total sold, total revenue, average price per book
+	    std::cout << data1.bookNo << " " << totalCnt
+   	           << " " << totalRevenue << " ";
+   		 if (totalCnt != 0)
+      		  std::cout << totalRevenue/totalCnt << std::endl;
+	    else
+   		     std::cout << "(no sales)" << std::endl;
+	    return 0; // indicate success
+	} else {  // transactions weren't for the same ISBN
+   		 std::cerr << "Data must refer to the same ISBN"
+      	        << std::endl;
+	    return -1; // indicate failure
+	}
+    
+}
+```
