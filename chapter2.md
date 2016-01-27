@@ -316,7 +316,102 @@ he easiest way to understand the type of r is to <mark>read the definition right
 int x;
 ```
 
-##2.5
+##2.5 Dealing with Types
+
+### 2.5.1. Type Aliases
+A <mark>type alias</mark> is a name that is a synonym for another type.
+
+```CPP
+typedef double wages; // wages is a synonym for double
+typedef wages base, *p; // base is a synonym for double, p for double*
+```
+
+The new standard introduced a second way to define a type alias, via an alias.
+
+```CPP
+using SI = Sales_item; // SI is a synonym for Sales_item
+```
+
+#### Pointers, const, and Type Aliases
+```cpp
+typedef char *pstring;
+const pstring cstr = 0; // cstr is a constant pointer to char
+const pstring *ps; // ps is a pointer to a constant pointer to char
+const char *cstr = 0; // wrong interpretation of const pstring cstr
+```
+
+* const pstring is a constant pointer to char—not a pointer to const char.
+* This rewrite declares cstr as a pointer to const char rather than as a const pointer to char.
+
+### 2.5.2. The auto Type Specifier
+When we write a program, it can be surprisingly difficult—and sometimes even impossible—to determine the type of an expression. Under the new standard, we can let the compiler figure out the type for us by using the <mark>auto</mark> type specifier.
+
+* auto tells the compiler to deduce the type from the initializer.
+
+```cpp
+auto item = val1 + val2; // item initialized to the result of val1 + val2
+auto i=0,*p=&i; //ok: i is int and p isapointerto int 
+auto sz = 0, pi = 3.14; // error: inconsistent types for sz and pi
+```
+
+#### Compound Types, const, and auto
+```cpp
+int i = 0, &r = i;
+auto a=r; // a isan int (r isanaliasfor i,whichhastype int)
+```
+
+* auto ordinarily ignores top-level consts. As usual in initializations, low-level consts, such as when an initializer is a pointer to const, are kept:
+
+```cpp
+const int ci = i, &cr = ci;
+auto b = ci; // b is an int (top-level const in ci is dropped)
+auto c = cr; // c is an int (cr is an alias for ci whose const is top-level)
+auto d =&i; // d isan int*(& ofan int objectis int*)
+auto e = &ci; // e is const int*(& of a const object is low-level const)
+const auto f = ci; // deduced type of ci is int; f has type const int
+```
+We can also specify that we want a reference to the auto-deduced type. 
+
+```cpp
+auto&g=ci; // g isa constint& thatisboundto ci
+auto &h = 42; // error: we can't bind a plain reference to a literal const auto &j = 42; // ok: we can bind a const reference to a literal
+```
+＊ As usual, the initializers must provide consistent auto-deduced types.
+
+###2.5.3. The decltype Type Specifier
+<mark> decltype </mark>define a variable with a type that the compiler deduces from an expression but do not want to use that expression to initialize the variable.
+
+```cpp
+decltype(f()) sum = x; // sum has whatever type f returns
+```
+When the expression to which we apply decltype is a variable, decltype returns the type of that variable, including top-level const and references
+
+```cpp
+const int ci = 0, &cj = ci;
+decltype(ci) x = 0; // x has type const int
+decltype(cj) y = x; // y has type const int& and is bound to x 
+decltype(cj) z; // error: z is a reference and must be initialized
+```
+
+#### decltype and References
+When we apply decltype to an expression that is not a variable, we get the type that that expression yields.
+
+```cpp
+//decltype ofanexpressioncanbeareferencetype
+int i = 42, *p = &i, &r = i;
+decltype(r + 0) b; // ok: addition yields an int; b is an (uninitialized) int 
+decltype(*p) c; // error: c is int& and must be initialized
+
+```
+If we wrap the variable’s name in one or more sets of parentheses, decltype on such an expression yields a reference
+
+```cpp
+//decltype ofaparenthesizedvariableisalwaysareference 
+decltype((i)) d; // error: d is int& and must be initialized 
+decltype(i) e; // ok: e is an (uninitialized) int
+
+```
+
 
 
 ##2.6 Defining Our Own Data Structure
