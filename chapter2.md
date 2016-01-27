@@ -310,8 +310,150 @@ r = &i; //  r refers to a pointer; assigning &i to r makes p point to i
 
 he easiest way to understand the type of r is to <mark>read the definition right to left</mark>. The symbol closest to the name of the variable (in this case the & in &r) is the one that has the most immediate effect on the variable’s type. Thus, we know that r is a reference. The rest of the declarator determines the type to which r refers. The next symbol, * in this case, says that the type r refers to is a pointer type. Finally, the base type of the declaration says that r is a reference to a pointer to an int.
 
-## 2.4
+## 2.4 const Qualifier
+To make a variable unchangeable by defining the variable's type as const (must be initialized)
+#### Initialization and const
+The constness of a variable matters only for the operations that might change this variable. *For example*
 
+```cpp
+int i=42;
+cons int ci=i;
+int j=ci;
+```
+#### By default, const objects are local to a file
+* When a const is initialized as a compile-time constant,the compile will replace uses of the vaiable with its corresponding value.
+* To share a const varaiable across multiple files but whose initializer is not a constant expression. We want to define the const in one file and declare it in the other files that use that object.
+
+```cpp
+// file_1.cc defines and initializes bufSize
+extern const int bufSize=fcn();
+//file_1.h
+extern const int bufSize;
+```
+### 2.4.1 References to const
+Unlike an ordinary reference, a reference to const can not be used to change the object to which the reference is bound.
+
+```cpp
+const int ci-1024;
+const int &r1=ci;
+r1=42;// error, r1 is a reference to const
+int &r2=ci;//erroe, non const reference to a const object
+```
+#### Initialization and References to const
+Two exceptions to the rule that the type of a reference must match the type of the object to which it refers.
+
+*Initialize a reference to const from any expression that can be converted to the type of the reference.
+
+```cpp
+int i=42;
+const int &r1=i;//we can bind a const int& to a plain int object
+const int &r2=42;
+int &r3=r2;//error,r3 is a plian, non const reference
+```
+Consider a case where the type can not convert to the a referece to const
+```cpp
+double dval = 3.14;
+const int &ri = dval;
+```
+To ensure that the object to which ri is bound is an int, the compiler transforms this code into something like
+
+```cpp
+const int temp = dval;// create a temporary const int from the double
+const int &ri = temp;// bind ri to that temporary
+```
+<mark>Now consider what could happen if this initialization were allowed but ri was not const. </mark> 
+
+#### A Reference to const May Refer to an Object That Is Not const
+```cpp
+int i=42;
+int &r1=i;// r1 bound to i
+cons int &r2=i;//r2 also bound to i; but cannot be used to change i
+r1=0;//i=0 now
+r2=0;// erroe ,r2 is a ference to const
+```
+### 2.4.2 Pointers and const
+* A pointer to const may not be used to change the object to which the pointer points.
+* There is no guarantee that an object pointed to by a pointer too sonst won't change.
+
+```cpp
+const double pi = 3.14;   // pi is const; its value may not be changed
+double *ptr = &pi;        // error: ptr is a plain pointer
+const double *cptr = &pi; // ok: cptr may point to a double that is const
+*cptr = 42;
+double dval = 3.14;       // dval is a double; its value can be changed
+cptr = &dval;
+```
+#### const Pointers
+Since pointers are objects, we can have a pointer that is itself const.
+
+```cpp
+int errNumb = 0;
+int *const curErr = &errNumb;  // curErr will always point to errNumb
+const double pi = 3.14159;
+const double *const pip = &pi; // pip is a const pointer to a const object
+```
+<mark>To understand declarations: read from tight to left.</mark>
+
+* The fact that a pointer is itself const says nothing about whether we can use the pointer to change the underlying object.
+
+```cpp
+*pip = 2.72;     // error: pip is a pointer to const
+// if the object to which curErr points (i.e., errNumb) is nonzero
+if (*curErr) {
+    errorHandler();
+    *curErr = 0; // ok: reset the value of the object to which curErr is bound
+}
+```
+### 2.4.3 Top-Level const
+* Talk about independently whether a pointer (**top-level const**) is const and whether the objects(**low-level const**) to which it can point are const. 
+* Generally, top-level const: build-in arithmetic types, a class type, or a pointer type. low-type const appears in the base type of compound types such as pointers or references.
+
+```cpp
+int i = 0;
+int *const p1 = &i;  // we can't change the value of p1; const is top-level
+const int ci = 42;   // we cannot change ci; const is top-level
+const int *p2 = &ci; // we can change p2; const is low-level
+const int *const p3 = p2; // right-most const is top-level, left-most is not
+const int &r = ci;  // const in reference types is always low-level
+```
+The distinction between top-level and low-level matters when we copy an object.
+
+
+When we copy an object, top-level consts are ignored:
+
+```cpp
+i = ci;  // ok: copying the value of ci; top-level const in ci is ignored
+p2 = p3; // ok: pointed-to type matches; top-level const in p3 is ignored
+```
+On the other hand, low-level const is never ignored. ???
+
+```cpp
+int *p = p3; // error: p3 has a low-level const but p doesn't
+p2 = p3;     // ok: p2 has the same low-level const qualification as p3
+p2 = &i;     // ok: we can convert int* to const int*
+int &r = ci; // error: can't bind an ordinary int& to a const int object
+const int &r2 = i; // ok: can bind const int& to plain int
+```
+###2.4.4 constexpr and Constant Expressions
+* A constant expression is an expression whose valuse cannot change and that can be evaluated at compile time.
+* A const object that is initialized from a constant expression is also a constant expression.
+* depend on type(const) and initilization(fix)
+
+#### constexpr Variable 
+Under the new standard, we can ask the compiler to verify that a variable is a constant expression by declaring the variable in a constexpr declaration. Variables declared as constexpr are implicitly const and must be initialized by constant expressions.
+
+```cpp
+constexpr int mf = 20;        // 20 is a constant expression
+constexpr int limit = mf + 1; // mf + 1 is a constant expression
+constexpr int sz = size();    // ok only if size is a constexpr function
+```
+#### Literal Types
+Because a constant expression is one that can be evaluated at compile time, there are limits on the types that we can use in a constexpr declaration. The types we can use in a constexpr are known as “literal types” because they are simple enough to have literal values.
+
+* Variables defined inside a function ordinarily are not stored at a fixed address. Hence, we cannot use a constexpr pointer to point to such variables. On the other hand, the address of an object defined outside of any function is a constant expression, and so may be used to initialize a constexpr pointer. 
+
+#### Pointers and constexpre
+* constexpr applies to pointer.(impose a top-level const)
 ```cpp
 int x;
 ```
