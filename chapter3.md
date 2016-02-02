@@ -195,3 +195,162 @@ Your hex number is: C05F8F
 
 
 ## 3.3 Library vector Type
+## 3.3 Library *vector* Type
+* Vector: collection of same type objects.(index)(container)
+* To use a vector, must include header.
+
+```cpp
+#include <vector>
+using std::vector
+```
+* A *vector* is a class template.
+   *   C++ has both class and function templates
+   *   Templates are not themselves functions or classes(instructions)
+   *   instantiation
+   *    we specify which class to instantiate by supplying additional information.(angle brackets following the template's name)
+   *    hold type(nonreference) 
+  
+```cpp
+vector<int> ivec;// ivec holds objects of type int
+vector<Sales_item> Sales_vec; // holds Sales_items
+vector<vector<string>> file;  // vector whose elements are vectors
+vector<vector<string> > file;
+```
+### 3.3.1 Defining and Intializing *vector*s
+
+![](initialize.jp2)
+
+* empty vector
+
+```cpp
+vector<string> svec; // default initialization; svec has no elements
+```
+   * the use of empty vector: add elements to empty vector ar run time.
+
+* copy elements from another vector: the two vectors must be the same type
+
+```cpp
+vector<int> ivec;             // initially empty
+// give ivec some values
+vector<int> ivec2(ivec);      // copy elements of ivec into ivec2
+vector<string> svec(ivec2);   // error: svec holds strings, not ints
+```
+#### List initializeing a *vector*
+
+* curly braces
+
+```cpp
+vector<string> v1{"a", "an", "the"};  // list initialization
+vector<string> v2("a", "an", "the");  // error
+```
+
+#### Creating a Specified Number of Elements
+
+```cpp
+vector<int> ivec(10, -1);       // ten int elements, each initialized to -1
+vector<string> svec(10, "hi!"); // ten strings; each element is "hi!"
+```
+
+* omit value and supply only size
+      * libarary creates a value-initialized element initializer for use.
+      * if our vector holds objects of a type that we cannot default initialize, then we must supply an initial element value
+      * if we supply an element count without also supplying an initial value, we must use the **direct form** of initialization.
+
+```cpp
+vector<int> ivec(10);    // ten elements, each initialized to 0
+vector<string> svec(10); // ten elements, each an empty string
+```
+
+```cpp
+vector<int> vi = 10;    // error: must use direct initialization to supply a size
+```
+
+###3.3.2 Adding Elements to a *vector*
+
+* *push_back*: The push_back operation takes a value and “pushes” that value as a new last element onto the “back” of the vector
+
+```cpp
+vector<int> v2;        // empty vector
+for (int i = 0; i != 100; ++i)
+    v2.push_back(i);    // append sequential integers to v2
+// at end of loop v2 has 100 elements, values 0 . . . 99
+```
+
+```cpp
+// read words from the standard input and store them as elements in a vector
+string word;
+vector<string> text;       // empty vector
+while (cin >> word) {
+    text.push_back(word);  // append word to text
+}
+```
+
+* vectors grow efficiently
+
+### 3.3.3 Other *vector* Operations
+
+![](operations.jp2)
+
+* access the elements of a vector(same with access the characters in a string) 
+
+```cpp
+vector<int> v{1,2,3,4,5,6,7,8,9};
+for (auto &i : v)     // for each element in v (note: i is a reference,control variable)
+    i *= i;           // square the element value
+for (auto i : v)      // for each element in v
+    cout << i << " "; // print the element
+cout << endl;
+```
+* *size* return returns a value of the *size_type* defined by the corresponding vector type.(string)
+* equality
+* relational operators:(dictionary order)
+   * If the vectors have differing sizes, but the elements that are in common are equal, then the vector with fewer elements is less than the one with more elements.
+   * If the elements have differing values, then the relationship between the vectors is determined by the relationship between the first elements that differ.
+   
+
+#### computing a *vector* Index
+* subscript operator
+* ***EX***:
+clustering:
+42 65 95 100 39 67 95 76 88 76 83 92 76 93
+
+```cpp
+// count the number of grades by clusters of ten: 0--9, 10--19, . .. 90--99, 100
+vector<unsigned> scores(11, 0); // 11 buckets, all initially 0
+unsigned grade;
+while (cin >> grade) {      // read the grades
+    if (grade <= 100)       // handle only valid grades
+        ++scores[grade/10]; // increment the counter for the current cluster
+}
+```
+* subscript does not add elements
+wrong!
+
+```cpp
+vector<int> ivec;   // empty vector
+for (decltype(ivec.size()) ix = 0; ix != 10; ++ix)
+    ivec[ix] = ix;  // disaster: ivec has no elements
+```
+right!
+
+```cpp
+for (decltype(ivec.size()) ix = 0; ix != 10; ++ix)
+    ivec.push_back(ix);  // ok: adds a new element with value ix
+```
+
+**Subscript only elements that are known to exist!**
+
+```cpp
+vector<int> ivec;      // empty vector
+cout << ivec[0];       // error: ivec has no elements!
+```
+
+```cpp
+vector<int> ivec2(10); // vector with ten elements
+cout << ivec2[10];     // error: ivec2 has elements 0 . . . 9
+```
+      
+
+
+
+  
