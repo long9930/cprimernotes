@@ -1,0 +1,10 @@
+sudo port selfupdate
+sudo port install py27-zmq
+sudo port install py27-tornado
+sudo port install py27-nose
+sudo port install py27-ipython
+sudo port install py27-notebook  ## optional
+sudo port install py27-numpy  ## recommended
+sudo port install py27-matplotlib  ## For ploting, optional
+rehash  ## for tcsh shell
+ipython-2.7
