@@ -38,3 +38,7 @@ Similar to \$^, this is the names of all the prerequisites separated by spaces, 
 
 \$*
 The stem of the target filename. A stem is typically a filename without its suffix. (We’ll discuss how stems are computed later in the section Pattern Rules.) Its use outside of pattern rules is discouraged.
+
+
+## Find files with VPATH and vpath
+
