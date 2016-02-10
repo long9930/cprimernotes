@@ -47,6 +47,12 @@ For class types, what happens depends on the details of the class.
 
 
 ###Assignment Is Right Associative###
+Associativity (or fixity) of an operator is a property that determines how operators of the same precedence are grouped in the absence of parentheses. If an operand is both preceded and followed by operators (for example, "^ 4 ^"), and those operators have equal precedence, then the operand may be used as input to two different operations. The choice of which operations to apply the operand to, is determined by the "associativity" of the operators. Operators may be
+* ```associative``` (operations can be grouped arbitrarily)
+* ```left-associative``` (operations are grouped from the left)
+* ```right-associative``` (operations are grouped from the right) 
+* ```non-associative``` (operations can not be chained, often because the output type is incompatible with the input types). 
+
 Assignment is right associative:
 ```cpp
 int ival, jval;
