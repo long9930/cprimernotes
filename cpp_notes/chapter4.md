@@ -45,6 +45,58 @@ For class types, what happens depends on the details of the class.
 
 * The initializer list may be empty. In this case, the compiler generates a value-initialized (§ 3.3.1, p. 98) temporary and assigns that value to the left-hand operand.
 
+
+Assignment Is Right Associative
+Unlike the other binary operators, assignment is right associative:
+int ival, jval;
+ival = jval = 0; // ok: each assigned 0
+Because assignment is right associative, the right-most assignment, jval = 0, is the right-hand operand of the left-most assignment operator. Because assignment returns its left-hand operand, the result of the right-most assignment (i.e., jval) is assigned to ival.
+Each object in a multiple assignment must have the same type as its right-hand neighbor or a type to which that neighbor can be converted (§ 4.11, p. 159):
+int ival, *pval; // ival is an int; pval is a pointer to int
+ival = pval = 0; // error: cannot assign the value of a pointer to an int
+string s1, s2;
+s1 = s2 = "OK";  // string literal "OK" converted to string
+The first assignment is illegal because ival and pval have different types and there is no conversion from the type of pval (int*) to the type of ival (int). It is illegal even though zero is a value that can be assigned to either object.
+On the other hand, the second assignment is fine. The string literal is converted to string, and that string is assigned to s2. The result of that assignment is s2, which has the same type as s1.
+
+Assignment Has Low Precedence
+Assignments often occur in conditions. Because assignment has relatively low precedence, we usually must parenthesize the assignment for the condition to work properly. To see why assignment in a condition is useful, consider the following loop. We want to call a function until it returns a desired value—say, 42:
+// a verbose and therefore more error-prone way to write this loop
+int i = get_value();  // get the first value
+while (i != 42) {
+    // do something ...
+    i = get_value();  // get remaining values
+}
+Here we start by calling get_value followed by a loop whose condition uses the value returned from that call. The last statement in this loop makes another call to get_value, and the loop repeats. We can write this code more directly as
+int i;
+// a better way to write our loop---what the condition does is now clearer
+while ((i = get_value()) != 42) {
+    // do something ...
+}
+The condition now more clearly expresses our intent: We want to continue until get_value returns 42. The condition executes by assigning the result returned by get_value to i and then comparing the result of that assignment with 42.
+Without the parentheses, the operands to != would be the value returned from get_value and 42. The true or false result of that test would be assigned to i—clearly not what we intended!
+
+Beware of Confusing Equality and Assignment Operators
+The fact that we can use assignment in a condition can have surprising effects:
+if (i = j)
+The condition in this if assigns the value of j to i and then tests the result of the assignment. If j is nonzero, the condition will be true. The author of this code almost surely intended to test whether i and j have the same value:
+if (i == j)
+Bugs of this sort are notoriously difficult to find. Some, but not all, compilers are kind enough to warn about code such as this example.
+
+Compound Assignment Operators
+We often apply an operator to an object and then assign the result to that same object. As an example, consider the sum program from § 1.4.2 (p. 13):
+int sum = 0;
+// sum values from 1 through 10 inclusive
+for (int val = 1; val <= 10; ++val)
+    sum += val; //  equivalent to sum = sum + val
+This kind of operation is common not just for addition but for the other arithmetic operators and the bitwise operators, which we cover in § 4.8 (p. 152). There are compound assignments for each of these operators:
+ +=   -=   *=   /=   %=         // arithmetic operators
+<<=  >>=   &=   ^=   |=         // bitwise operators; see § 4.8 (p. 152)
+Each compound operator is essentially equivalent to
+a = a op b;
+with the exception that, when we use the compound assignment, the left-hand operand is evaluated only once. If we use an ordinary assignment, that operand is evaluated twice: once in the expression on the right-hand side and again as the operand on the left hand. In many, perhaps most, contexts this difference is immaterial aside from possible performance consequences.
+
+
 ## C++ Primer C4.5 C4.6
 
 
