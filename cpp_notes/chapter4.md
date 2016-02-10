@@ -39,6 +39,12 @@ If the left-hand operand is of a built-in type,
 k = {3.14};                 // error: narrowing conversion
 ```
 
+For class types, what happens depends on the details of the class. 
+
+* In the case of vector, the ```vector``` template defines its own version of an assignment operator that can take an initializer list. This operator replaces the elements of the left-hand side with the elements in the list on the right-hand side.
+
+* The initializer list may be empty. In this case, the compiler generates a value-initialized (§ 3.3.1, p. 98) temporary and assigns that value to the left-hand operand.
+
 ## C++ Primer C4.5 C4.6
 
 
