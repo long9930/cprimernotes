@@ -29,11 +29,15 @@ k = 3.14159;    //  result: type int, value 3
 
 Under the new standard, we can use a braced initializer list on the right-hand side:
 ```cpp
-k = {3.14};                 // error: narrowing conversion
 vector<int> vi;             // initially empty
 vi = {0,1,2,3,4,5,6,7,8,9}; // vi now has ten elements, values 0 through 9
 ```
-
+If the left-hand operand is of a built-in type, 
+* the initializer list may contain at most one value, 
+* that value must not require a narrowing conversion 
+```cpp
+k = {3.14};                 // error: narrowing conversion
+```
 
 ## C++ Primer C4.5 C4.6
 
