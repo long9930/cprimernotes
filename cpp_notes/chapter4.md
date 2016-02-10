@@ -16,7 +16,10 @@ Each of these assignments is illegal:
 i + j = k;     // error: arithmetic expressions are rvalues
 ci = k;        // error: ci is a const (nonmodifiable) lvalue
 ```
-If the types of the left and right operands differ, the right-hand operand is converted to the type of the left:
+
+* The result of an assignment is its left-hand operand, which is an lvalue. 
+* The type of the result is the type of the left-hand operand. 
+* If the types of the left and right operands differ, the right-hand operand is converted to the type of the left:
 ```cpp
 k = 0;          //  result: type int, value 0
 k = 3.14159;    //  result: type int, value 3
