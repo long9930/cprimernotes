@@ -49,8 +49,8 @@ For class types, what happens depends on the details of the class.
 ###Assignment Is Right Associative###
 Associativity (or fixity) of an operator is a property that determines how operators of the same precedence are grouped in the absence of parentheses. If an operand is both preceded and followed by operators (for example, "^ 4 ^"), and those operators have equal precedence, then the operand may be used as input to two different operations. The choice of which operations to apply the operand to, is determined by the "associativity" of the operators. Operators may be
 * ```associative``` (operations can be grouped arbitrarily)
-* ```left-associative``` (operations are grouped from the left)
-* ```right-associative``` (operations are grouped from the right) 
+* ```left-associative``` (operations are grouped from the left ```a ~ b ~ c => (a ~ b) ~ c```)
+* ```right-associative``` (operations are grouped from the right ```a ~ b ~ c => a ~ (b ~ c)```) 
 * ```non-associative``` (operations can not be chained, often because the output type is incompatible with the input types). 
 
 Assignment is right associative:
@@ -58,7 +58,9 @@ Assignment is right associative:
 int ival, jval;
 ival = jval = 0; // ok: each assigned 0
 ```
-Because assignment is right associative, the right-most assignment, jval = 0, is the right-hand operand of the left-most assignment operator. Because assignment returns its left-hand operand, the result of the right-most assignment (i.e., jval) is assigned to ival.
+Because assignment is right associative, the right-most assignment, jval = 0, is the right-hand operand of the left-most assignment operator. ```ival = (jval = 0)```
+
+Because assignment returns its left-hand operand, the result of the right-most assignment (i.e., jval) is assigned to ival.
 Each object in a multiple assignment must have the same type as its right-hand neighbor or a type to which that neighbor can be converted (§ 4.11, p. 159):
 int ival, *pval; // ival is an int; pval is a pointer to int
 ival = pval = 0; // error: cannot assign the value of a pointer to an int
