@@ -46,7 +46,7 @@ For class types, what happens depends on the details of the class.
 * The initializer list may be empty. In this case, the compiler generates a value-initialized (§ 3.3.1, p. 98) temporary and assigns that value to the left-hand operand.
 
 
-Assignment Is Right Associative
+###Assignment Is Right Associative###
 Unlike the other binary operators, assignment is right associative:
 int ival, jval;
 ival = jval = 0; // ok: each assigned 0
