@@ -10,6 +10,13 @@ For example, given
 int i = 0, j = 0, k = 0; // initializations, not assignment
 const int ci = i;        // initialization, not assignment
 ```
+Each of these assignments is illegal:
+```cpp
+1024 = k;      // error: literals are rvalues
+i + j = k;     // error: arithmetic expressions are rvalues
+ci = k;        // error: ci is a const (nonmodifiable) lvalue
+```
+
 
 
 ## C++ Primer C4.5 C4.6
