@@ -27,6 +27,14 @@ k = 0;          //  result: type int, value 0
 k = 3.14159;    //  result: type int, value 3
 ```
 
+Under the new standard, we can use a braced initializer list on the right-hand side:
+```cpp
+k = {3.14};                 // error: narrowing conversion
+vector<int> vi;             // initially empty
+vi = {0,1,2,3,4,5,6,7,8,9}; // vi now has ten elements, values 0 through 9
+```
+
+
 ## C++ Primer C4.5 C4.6
 
 
@@ -37,3 +45,4 @@ k = 3.14159;    //  result: type int, value 3
 
 
 ## C++ Primer C4.9~C4.11
+
