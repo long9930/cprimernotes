@@ -1,5 +1,6 @@
 ## C++ Primer C4.4
 The left-hand operand of an assignment operator must be a 
+
 * ```modifiable``` 
 * ```lvalue ```
 
@@ -351,3 +352,7 @@ i = int (*pc);
 pv = &d;
 pc = (char*) pv;
 ```
+
+
+## References
+[Understanding lvalues and rvalues in C and C++](http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c)
