@@ -14,7 +14,43 @@ vpath.o variable.o: make.h config.h getopt.h gettext.h dep.h
 ```
 
 
-## Wildcards
+## Phony Targets
+
+```makefile
+.PHONY: clean
+clean:
+        rm -f *.o lexer.c      
+```
+
+**Standard phony targets**
+all, install, clean, distclean, TAGS, info, check
+
+## Variables
+
+```
+$(variable_name)
+```
+
+The variable will expand
+
+```makefile
+ # Define the symbols we might want to change:
+CXX	:= c++
+CXXFLAGS := -g
+    
+OBJECTS	:= processing.o gui.o
+    
+my_program: $(OBJECTS)
+	$(CXX) $(OBJECTS) -o my_program
+    
+processing.o: processing.cxx
+	$(CXX) $(INCLUDES) $(CXXFLAGS) -c processing.cxx -o processing.o
+    
+gui.o: gui.cxx
+    	$(CXX) $(CXXFLAGS) -c gui.cxx -o gui.o
+```
+
+
 
 
 ## Automatic variables
