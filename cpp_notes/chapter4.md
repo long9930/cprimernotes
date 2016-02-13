@@ -63,6 +63,7 @@ Associativity (or fixity) of an operator is a property that determines how opera
 * ```non-associative``` (operations can not be chained, often because the output type is incompatible with the input types). 
 
 Assignment is right associative:
+
 ```cpp
 int ival, jval;
 ival = jval = 0; // ok: each assigned 0
@@ -239,6 +240,40 @@ n = p->size();
 ## C++ Primer C4.7
 
 
+The conditional operator (the ?: operator) lets us embed simple if-else logic inside an expression. 
+
+The form is:
+
+```cpp
+cond  ? expr1  : expr2;
+```
+
+Where cond is the conditional expression, If the it is true, then expr1 is evaluated; otherwise, expr2 is evaluated.
+
+Here's the example:
+
+```cpp
+string finalgrade = (grade < 60) ? "fail" : "pass";
+```
+
+Nesting conditional operations: nest one conditional operator inside another one.
+
+Example:
+
+```cpp
+finalgrade = (grade > 90) ? "high pass"
+                      : (grade < 60) ? "fail" : "pass";
+```
+
+Note, if we embed a conditional expression in a larger expression, we usually must parenthesize the conditional subexpression. If the parenthesis is not complete, the results would be wrong.
+
+Example:
+
+```cpp
+cout << ((grade < 60) ?   "fail" : "pass"); // prints pass or  fail
+cout << (grade < 60) ?   "fail" : "pass";   // prints 1 or 0!
+cout << grade < 60 ?   "fail" : "pass"; //  error: compares cout to 60
+```
 
 ## C++ Primer C4.9~C4.11
 
