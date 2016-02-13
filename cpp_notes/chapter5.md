@@ -54,6 +54,36 @@ for (initializer; condition; expression)
       statement
 ```
 
+* init-statement is used to initialize or assign a starting value that is modified over the course of the loop. 
+* condition serves as the loop control. As long as condition evaluates as true, statement is executed. If the first evaluation of condition yields false, statement is not executed. 
+* expression usually modifies the variable(s) initialized in init-statement and tested in condition. expression is evaluated after each iteration of the loop. As usual, statement can be either a single or a compound statement.
+
+
+```cpp
+// process characters in s until we run out of characters or we hit a whitespace
+for (decltype(s.size()) index = 0;
+     index != s.size() && !isspace(s[index]); ++index)
+        s[index] = toupper(s[index]); // capitalize the current character
+```
+the order of evaluation is as follows:
+* 1. init-statement is executed once at the start of the loop. In this example, index is defined and initialized to zero.
+* 2. Next, condition is evaluated. If index is not equal to s.size() and the character at s[index] is not whitespace, the for body is executed. Otherwise, the loop terminates. If the condition is false on the first iteration, then the for body is not executed at all.
+* 3. If the condition is true, the for body executes. In this case, the for body makes the character at s[index] uppercase.
+* 4. Finally, expression is evaluated. In this example, index is incremented by 1.
+
+These four steps represent the first iteration of the for loop. Step 1 is executed only once on entry to the loop. Steps 2, 3, and 4 are repeated until the condition evaluates as false—that is, when we encounter a whitespace character in s, or index is greater than s.size().
+
+* It is worth remembering that the visibility of any object defined within the for header is limited to the body of the for loop. Thus, in this example, index is inaccessible after the for completes.
+
+* init-statement can define several objects. 
+* init-statement may be only a single declaration statement. 
+* Thus, all the variables must have the same base type. 
+```cpp
+// remember the size of v and stop when we get to the original last element
+for (decltype(v.size()) i = 0, sz = v.size(); i != sz; ++i)
+    v.push_back(v[i]);
+```
+
 ## C++ Primer C5.5
 
 
