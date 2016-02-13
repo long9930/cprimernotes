@@ -24,51 +24,34 @@ while (condition)
 * A while is also useful when we want access to the value of the loop control variable after the loop finishes.
 
 ```cpp
-(a) 
-unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
-char ch = next_text();
-switch (ch) {
-    case 'a': aCnt++;
-    case 'e': eCnt++;
-    default: iouCnt++;
-}
-(b) 
-unsigned index = some_value();
-switch (index) {
-    case 1:
-        int ix = get_value();
-        ivec[ ix ] = index;
-        break;
-    default:
-        ix = ivec.size()-1;
-        ivec[ ix ] = index;
-}
-(c)
-unsigned evenCnt = 0, oddCnt = 0;
-int digit = get_num() % 10;
-switch (digit) {
-    case 1, 3, 5, 7, 9:
-        oddcnt++;
-        break;
-    case 2, 4, 6, 8, 10:
-        evencnt++;
-        break;
-}
-(d) 
-unsigned ival=512, jval=1024, kval=4096;
-unsigned bufsize;
-unsigned swt = get_bufCnt();
-switch(swt) {
-    case ival:
-        bufsize = ival * sizeof(int);
-        break;
-    case jval:
-        bufsize = jval * sizeof(int);
-        break;
-    case kval:
-        bufsize = kval * sizeof(int);
-        break;
-}
+vector<int> v;
+int i;
+// read until end-of-file or other input failure
+while (cin >> i)
+    v.push_back(i);
+// find the first negative element
+auto beg = v.begin();
+while (beg != v.end() && *beg >= 0)
+    ++beg;
+if (beg == v.end())
+    // we know that all elements in v are greater than or equal to zero
+```
+* The first loop reads data from the standard input. We have no idea how many times this loop will execute. The condition fails when cin reads invalid data, encounters some other input failure, or hits end-of-file. 
+* The second loop continues until we find a negative value. When the loop terminates, beg is either equal to v.end(), or it denotes an element in v whose value is less than zero. 
+* We can use the state of beg outside the while to determine further processing.
+
+###Traditional for Statement###
+The syntactic form of the for statement is:
+```cpp
+for (init-statement condition; expression)
+    statement
+```
+* The for and the part inside the parentheses is often referred to as the for header.
+* init-statement must be a declaration statement, an expression statement, or a null statement. Each of these statements ends with a semicolon
+
+```cpp
+for (initializer; condition; expression)
+      statement
 ```
 
 ## C++ Primer C5.5
