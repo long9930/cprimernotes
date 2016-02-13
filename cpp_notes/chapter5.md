@@ -24,14 +24,16 @@ while (condition)
 * A while is also useful when we want access to the value of the loop control variable after the loop finishes.
 
 ```cpp
-(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
+(a) 
+unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
 char ch = next_text();
 switch (ch) {
     case 'a': aCnt++;
     case 'e': eCnt++;
     default: iouCnt++;
 }
-(b) unsigned index = some_value();
+(b) 
+unsigned index = some_value();
 switch (index) {
     case 1:
         int ix = get_value();
@@ -41,7 +43,8 @@ switch (index) {
         ix = ivec.size()-1;
         ivec[ ix ] = index;
 }
-(c) unsigned evenCnt = 0, oddCnt = 0;
+(c)
+unsigned evenCnt = 0, oddCnt = 0;
 int digit = get_num() % 10;
 switch (digit) {
     case 1, 3, 5, 7, 9:
@@ -51,7 +54,8 @@ switch (digit) {
         evencnt++;
         break;
 }
-(d) unsigned ival=512, jval=1024, kval=4096;
+(d) 
+unsigned ival=512, jval=1024, kval=4096;
 unsigned bufsize;
 unsigned swt = get_bufCnt();
 switch(swt) {
