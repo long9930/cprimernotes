@@ -113,6 +113,68 @@ for (int i; cin >> i; /* no expression */ )
    v.push_back(i);
 ```
 
+###Range for Statement### 
+```cpp
+for (declaration : expression)
+    statement
+```
+expression must be
+* a sequence, such as a braced initializer list, an array
+* object of a type such as vector or string that has begin and end members that return iterators
+
+declaration defines a variable. 
+* It must be possible to convert each element of the sequence to the variable’s type
+* The easiest way is to use the auto type specifier
+* On each iteration, the control variable is defined and initialized by the next value in the sequence, after which statement is executed. 
+* Execution ends once all the elements have been processed.
+
+```cpp
+vector<int> v = {0,1,2,3,4,5,6,7,8,9};
+// range variable must be a reference so we can write to the elements
+for (auto &r : v)   // for each element in v
+    r *= 2;         // double the value of each element in v
+```
+* Because we want to change the value of the elements in v, we declare r as a reference.
+* we cannot use a range for to add elements to a vector
+* In a range for, the value of end() is cached.
+* If we add elements to (or remove them from) the sequence, the value of end might be invalidated
+
+
+###The do while Statement###
+A do while statement is like a while but the condition is tested after the statement body completes. Regardless of the value of the condition, we execute the loop at least once. 
+
+```cpp
+do
+        statement
+while (condition);
+```
+* In a do, statement is executed before condition is evaluated
+* condition cannot be empty
+* If condition evaluates as false, then the loop terminates; otherwise, the loop is repeated. 
+* Variables used in condition must be defined outside the body of the do while statement Because the condition is not evaluated until after the statement or block is executed.
+```cpp
+do {
+    // . . .
+    mumble(foo);
+} while (int foo = get_foo()); // error: declaration in a do condition
+```
+
+```cpp
+// repeatedly ask the user for a pair of numbers to sum
+string rsp;  // used in the condition; can't be defined inside the do
+do {
+    cout << "please enter two values: ";
+    int val1 = 0, val2 = 0;
+    cin  >> val1 >> val2;
+    cout << "The sum of " << val1 << " and " << val2
+         << " = " << val1 + val2 << "\n\n"
+         << "More? Enter yes or no: ";
+    cin  >> rsp;
+} while (!rsp.empty() && rsp[0] != 'n');
+```
+* The loop starts by prompting the user for two numbers. 
+* It then prints their sum and asks whether the user wishes to do another sum.
+* The condition checks that the user gave a response. If not, or if the input starts with an n, the loop is exited. Otherwise the loop is repeated.
 
 ## C++ Primer C5.5
 
