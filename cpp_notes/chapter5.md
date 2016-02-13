@@ -6,9 +6,12 @@ Iterative statements, commonly called loops, provide for repeated execution unti
 * do while executes the body and then tests its condition.
 
 
-####The while Statement####
-
-
+###The while Statement###
+A while statement repeatedly executes a target statement as long as a condition is true. Its syntactic form is
+```cpp
+while (condition)
+      statement
+```
 
 ## C++ Primer C5.5
 
