@@ -75,6 +75,7 @@ These four steps represent the first iteration of the for loop. Step 1 is execut
 
 * It is worth remembering that the visibility of any object defined within the for header is limited to the body of the for loop. Thus, in this example, index is inaccessible after the for completes.
 
+Multiple Definitions in the for Header
 * init-statement can define several objects. 
 * init-statement may be only a single declaration statement. 
 * Thus, all the variables must have the same base type. 
@@ -82,6 +83,14 @@ These four steps represent the first iteration of the for loop. Step 1 is execut
 // remember the size of v and stop when we get to the original last element
 for (decltype(v.size()) i = 0, sz = v.size(); i != sz; ++i)
     v.push_back(v[i]);
+```
+
+Omitting Parts of the for Header
+* We can use a null statement for init-statement when an initialization is unnecessary. 
+```cpp
+auto beg = v.begin();
+for ( /* null */; beg != v.end() && *beg >= 0; ++beg)
+    ; // no work to do
 ```
 
 ## C++ Primer C5.5
