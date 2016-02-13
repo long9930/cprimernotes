@@ -87,11 +87,32 @@ for (decltype(v.size()) i = 0, sz = v.size(); i != sz; ++i)
 
 Omitting Parts of the for Header
 * We can use a null statement for init-statement when an initialization is unnecessary. 
+* semicolon is necessary to indicate the absence of init-statement
+* for body can be empty because all the work of the loop can be done inside the for condition and expression
+
 ```cpp
 auto beg = v.begin();
 for ( /* null */; beg != v.end() && *beg >= 0; ++beg)
     ; // no work to do
 ```
+
+* Omitting condition is equivalent to writing true as the condition.
+* the for body must contain a statement that exits the loop. Otherwise the loop will execute indefinitely
+```cpp
+for (int i = 0; /* no condition */ ; ++i) {
+    // process i; code inside the loop must stop the iteration!
+}
+```
+
+* We can also omit expression from the for header.
+* either the condition or the body must do something to advance the iteration
+
+```cpp
+vector<int> v;
+for (int i; cin >> i; /* no expression */ )
+   v.push_back(i);
+```
+
 
 ## C++ Primer C5.5
 
