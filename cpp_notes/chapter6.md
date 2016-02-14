@@ -19,3 +19,29 @@ The parentheses around *pf are necessary. If we omit the parentheses, then we de
 // declares a function named pf that returns a bool*
 bool *pf(const string &, const string &);
 ```
+
+
+
+###Using Function Pointers###
+* When we use the name of a function as a value, the function is automatically converted to a pointer. 
+```cpp
+pf = lengthCompare;  // pf now points to the function named lengthCompare
+pf = &lengthCompare; // equivalent assignment: address-of operator is optional
+```
+* we can use a pointer to a function to call the function to which the pointer points. 
+* there is no need to dereference the pointer:
+```cpp
+bool b1 = pf("hello", "goodbye");    // calls lengthCompare
+bool b2 = (*pf)("hello", "goodbye"); // equivalent call
+bool b3 = lengthCompare("hello", "goodbye"); // equivalent call
+```
+* There is no conversion between pointers to one function type and pointers to another function type. 
+* we can assign nullptr or a zero-valued integer constant expression to a function pointer to indicate that the pointer does not point to any function:
+```cpp
+string::size_type sumLength(const string&, const string&);
+bool cstringCompare(const char*, const char*);
+pf = 0;              // ok: pf points to no function
+pf = sumLength;      // error: return type differs
+pf = cstringCompare; // error: parameter types differ
+pf = lengthCompare;  // ok: function and pointer types match exactly
+```
