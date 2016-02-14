@@ -98,3 +98,39 @@ void useBigger(const string&, const string&, FuncP2);
 ```
 * Both declarations declare the same function.
 * In the first case, the compiler will automatically convert the function type represented by Func to a pointer.
+
+
+###Returning a Pointer to Function###
+* we can’t return a function type but can return a pointer to a function type. 
+* we must write the return type as a pointer type; 
+* the compiler will not automatically treat a function return type as the corresponding pointer type. 
+* the easiest way to declare a function that returns a pointer to function is by using a type alias:
+```cpp
+using F = int(int*, int);     // F is a function type, not a pointer
+using PF = int(*)(int*, int); // PF is a pointer type
+```
+Here we used type alias declarations to define F as a function type and PF as a pointer to function type. 
+* the return type is not automatically converted to a pointer type. 
+* We must explicitly specify that the return type is a pointer type:
+```cpp
+PF f1(int); // ok: PF is a pointer to function; f1 returns a pointer to function
+F f1(int);  // error: F is a function type; f1 can't return a function
+F *f1(int); // ok: explicitly specify that the return type is a pointer to function
+```
+
+Of course, we can also declare f1 directly, which we’d do as
+```cpp
+int (*f1(int))(int*, int);
+```
+
+* Reading this declaration from the inside out
+* f1 has a parameter list, so f1 is a function. 
+* f1 is preceded by a * so f1 returns a pointer. 
+* The type of that pointer itself has a parameter list, so the pointer points to a function. 
+* That function returns an int.
+
+
+* we can simplify declarations of functions that return pointers to function by using a ```trailing return```:
+```cpp
+auto f1(int) -> int (*)(int*, int);
+```
