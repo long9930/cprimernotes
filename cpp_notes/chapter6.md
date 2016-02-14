@@ -45,3 +45,16 @@ pf = sumLength;      // error: return type differs
 pf = cstringCompare; // error: parameter types differ
 pf = lengthCompare;  // ok: function and pointer types match exactly
 ```
+
+###Pointers to Overloaded Functions###
+* When we declare a pointer to an overloaded function, the compiler uses the type of the pointer to determine which overloaded function to use. 
+```cpp
+void ff(int*);
+void ff(unsigned int);
+void (*pf1)(unsigned int) = ff;  // pf1 points to ff(unsigned)
+```
+* The type of the pointer must match one of the overloaded functions exactly:
+```cpp
+void (*pf2)(int) = ff;    // error: no ff with a matching parameter list
+double (*pf3)(int*) = ff; // error: return type of ff and pf3 don't match
+```
