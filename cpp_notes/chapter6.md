@@ -134,3 +134,19 @@ int (*f1(int))(int*, int);
 ```cpp
 auto f1(int) -> int (*)(int*, int);
 ```
+
+###Using auto or decltype for Function Pointer Types###
+* If we know which function(s) we want to return, we can use decltype to simplify writing a function pointer return type. 
+* assume we have two functions, both of which return a string::size_type and have two const string& parameters. 
+* We can write a third function that takes a string parameter and returns a pointer to one of these two functions as follows:
+```cpp
+string::size_type sumLength(const string&, const string&);
+string::size_type largerLength(const string&, const string&);
+
+// depending on the value of its string parameter,
+// getFcn returns a pointer to sumLength or to largerLength
+decltype(sumLength) *getFcn(const string &);
+```
+
+* when we apply decltype to a function, it returns a function type, not a pointer to function type. 
+* We must add a * to indicate that we are returning a pointer, not a function.
