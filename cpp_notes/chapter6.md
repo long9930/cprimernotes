@@ -58,3 +58,43 @@ void (*pf1)(unsigned int) = ff;  // pf1 points to ff(unsigned)
 void (*pf2)(int) = ff;    // error: no ff with a matching parameter list
 double (*pf3)(int*) = ff; // error: return type of ff and pf3 don't match
 ```
+
+
+###Function Pointer Parameters###
+* we can have a parameter that is a pointer to function. 
+* we can write a parameter that looks like a function type, but it will be treated as a pointer
+```cpp
+// third parameter is a function type and is automatically treated as a pointer to function
+void useBigger(const string &s1, const string &s2,
+               bool pf(const string &, const string &));
+// equivalent declaration: explicitly define the parameter as a pointer to function
+void useBigger(const string &s1, const string &s2,
+               bool (*pf)(const string &, const string &));
+```
+* When we pass a function as an argument, we can do so directly. It will be automatically converted to a pointer:
+```cpp
+// automatically converts the function lengthCompare to a pointer to function
+useBigger(s1, s2, lengthCompare);
+```
+* Type aliases and decltype can simplify code that uses function pointers:
+```cpp
+// Func and Func2 have function type
+typedef bool Func(const string&, const string&);
+typedef decltype(lengthCompare) Func2; // equivalent type
+
+// FuncP and FuncP2 have pointer to function type
+typedef bool(*FuncP)(const string&, const string&);
+typedef decltype(lengthCompare) *FuncP2;  // equivalent type
+```
+
+Here we’ve used typedef to define our types. Both Func and Func2 are function types, whereas FuncP and FuncP2 are pointer types. 
+* decltype returns the function type; 
+* the automatic conversion to pointer is not done. 
+* if we want a pointer we must add the * ourselves. 
+```cpp
+// equivalent declarations of useBigger using type aliases
+void useBigger(const string&, const string&, Func);
+void useBigger(const string&, const string&, FuncP2);
+```
+* Both declarations declare the same function.
+* In the first case, the compiler will automatically convert the function type represented by Func to a pointer.
