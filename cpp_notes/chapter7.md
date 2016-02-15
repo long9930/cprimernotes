@@ -26,3 +26,28 @@ if (read(cin, total))  {  // read the first transaction
     cerr << "No data?!" << endl;         // notify the user
 }
 ```
+
+
+### Defining the Revised Sales_data Class ###
+* Member functions must be declared inside the class. 
+* Member functions may be defined inside the class itself or outside the class body. 
+* Nonmember functions that are part of the interface, are declared and defined outside the class.
+
+```cpp
+struct Sales_data {
+    // new members: operations on Sales_data objects
+    std::string isbn() const { return bookNo; }
+    Sales_data& combine(const Sales_data&);
+    double avg_price() const;
+    // data members are unchanged from § 2.6.1 (p. 72)
+    std::string bookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+};
+// nonmember Sales_data interface functions
+Sales_data add(const Sales_data&, const Sales_data&);
+std::ostream &print(std::ostream&, const Sales_data&);
+std::istream &read(std::istream&, Sales_data&);
+```
+
+* Member functions access the object on which they were called through an extra, implicit parameter named ```this```.
