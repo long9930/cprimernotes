@@ -51,3 +51,16 @@ std::istream &read(std::istream&, Sales_data&);
 ```
 
 * Member functions access the object on which they were called through an extra, implicit parameter named ```this```.
+* When we call a member function, this is initialized with the address of the object on which the function was invoked.
+```cpp
+total.isbn()
+
+// is equivalent to 
+
+// pseudo-code illustration of how a call to a member function is translated
+Sales_data::isbn(&total)
+```
+* Inside a member function, Any direct use of a member of the class is assumed to be an implicit reference through ```this```.
+* when isbn uses bookNo, it is implicitly using the member to which this points. It is as if we had written ```this->bookNo```.
+* it is illegal for us to define a parameter or variable named this
+* Because this is intended to always refer to “this” object, this is a const pointer. We cannot change the address that this holds.
