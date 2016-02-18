@@ -1,9 +1,9 @@
 MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_01D169AE.DF82EAE0"
+Content-Type: multipart/related; boundary="----=_NextPart_01D169AF.D5D367D0"
 
 This document is a Web archive file.  If you are seeing this message, this means your browser or editor doesn't support Web archive files.  For more information on the Web archive format, go to http://officeupdate.microsoft.com/office/webarchive.htm
 
-------=_NextPart_01D169AE.DF82EAE0
+------=_NextPart_01D169AF.D5D367D0
 Content-Location: file:///C:/E626E210/cpp_jump.htm
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/html; charset="macintosh"
@@ -27,10 +27,10 @@ xmlns:css=3D"http://macVmlSchemaUri" xmlns=3D"http://www.w3.org/TR/REC-html=
  <o:DocumentProperties>
   <o:Author>Wenlong Yuan</o:Author>
   <o:LastAuthor>Wenlong Yuan</o:LastAuthor>
-  <o:Revision>44</o:Revision>
-  <o:TotalTime>24</o:TotalTime>
+  <o:Revision>45</o:Revision>
+  <o:TotalTime>25</o:TotalTime>
   <o:Created>2016-02-17T22:57:00Z</o:Created>
-  <o:LastSaved>2016-02-18T00:13:00Z</o:LastSaved>
+  <o:LastSaved>2016-02-18T00:20:00Z</o:LastSaved>
   <o:Pages>3</o:Pages>
   <o:Words>351</o:Words>
   <o:Characters>2005</o:Characters>
@@ -44,8 +44,6 @@ xmlns:css=3D"http://macVmlSchemaUri" xmlns=3D"http://www.w3.org/TR/REC-html=
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
-<link rel=3DdataStoreItem href=3D"cpp_jump_files/item0001.xml"
-target=3D"cpp_jump_files/props0002.xml">
 <link rel=3DthemeData href=3D"cpp_jump_files/themedata.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
@@ -435,7 +433,8 @@ h3
 	font-size:13.5pt;
 	font-family:Times;}
 a:link, span.MsoHyperlink
-	{mso-style-priority:99;
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
 	color:blue;
 	mso-themecolor:hyperlink;
 	text-decoration:underline;
@@ -607,9 +606,8 @@ table.MsoTableLightShadingAccent1FirstRow
 	mso-tstyle-border-right:cell-none;
 	mso-tstyle-border-insideh:cell-none;
 	mso-tstyle-border-insidev:cell-none;
-	mso-para-margin-top:0in;
-	mso-para-margin-bottom:0in;
-	mso-para-margin-bottom:.0001pt;
+	mso-para-margin-top:auto;
+	mso-para-margin-bottom:auto;
 	line-height:normal;
 	mso-ansi-font-weight:bold;
 	mso-bidi-font-weight:bold;}
@@ -626,9 +624,8 @@ table.MsoTableLightShadingAccent1LastRow
 	mso-tstyle-border-right:cell-none;
 	mso-tstyle-border-insideh:cell-none;
 	mso-tstyle-border-insidev:cell-none;
-	mso-para-margin-top:0in;
-	mso-para-margin-bottom:0in;
-	mso-para-margin-bottom:.0001pt;
+	mso-para-margin-top:auto;
+	mso-para-margin-bottom:auto;
 	line-height:normal;
 	mso-ansi-font-weight:bold;
 	mso-bidi-font-weight:bold;}
@@ -708,9 +705,8 @@ table.MsoTableLightShadingAccent3FirstRow
 	mso-tstyle-border-right:cell-none;
 	mso-tstyle-border-insideh:cell-none;
 	mso-tstyle-border-insidev:cell-none;
-	mso-para-margin-top:0in;
-	mso-para-margin-bottom:0in;
-	mso-para-margin-bottom:.0001pt;
+	mso-para-margin-top:auto;
+	mso-para-margin-bottom:auto;
 	line-height:normal;
 	mso-ansi-font-weight:bold;
 	mso-bidi-font-weight:bold;}
@@ -727,9 +723,8 @@ table.MsoTableLightShadingAccent3LastRow
 	mso-tstyle-border-right:cell-none;
 	mso-tstyle-border-insideh:cell-none;
 	mso-tstyle-border-insidev:cell-none;
-	mso-para-margin-top:0in;
-	mso-para-margin-bottom:0in;
-	mso-para-margin-bottom:.0001pt;
+	mso-para-margin-top:auto;
+	mso-para-margin-bottom:auto;
 	line-height:normal;
 	mso-ansi-font-weight:bold;
 	mso-bidi-font-weight:bold;}
@@ -814,9 +809,8 @@ table.MsoTableMediumShading1Accent4FirstRow
 	mso-tstyle-border-right-themetint:191;
 	mso-tstyle-border-insideh:cell-none;
 	mso-tstyle-border-insidev:cell-none;
-	mso-para-margin-top:0in;
-	mso-para-margin-bottom:0in;
-	mso-para-margin-bottom:.0001pt;
+	mso-para-margin-top:auto;
+	mso-para-margin-bottom:auto;
 	line-height:normal;
 	color:white;
 	mso-themecolor:background1;
@@ -841,9 +835,8 @@ table.MsoTableMediumShading1Accent4LastRow
 	mso-tstyle-border-right-themetint:191;
 	mso-tstyle-border-insideh:cell-none;
 	mso-tstyle-border-insidev:cell-none;
-	mso-para-margin-top:0in;
-	mso-para-margin-bottom:0in;
-	mso-para-margin-bottom:.0001pt;
+	mso-para-margin-top:auto;
+	mso-para-margin-bottom:auto;
 	line-height:normal;
 	mso-ansi-font-weight:bold;
 	mso-bidi-font-weight:bold;}
@@ -1086,8 +1079,9 @@ style=3D'font-size:26.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt;mso-bidi-font-size:12.=
 0pt'>A
-break statement terminates the nearest enclosing while, do while, for, or
-switch statement.<o:p></o:p></span></p>
+break statement terminates the nearest enclosing while, do while, for, or s=
+witch
+statement.<o:p></o:p></span></p>
 
 <p class=3DMsoNormal><o:p>&nbsp;</o:p></p>
 
@@ -1443,10 +1437,11 @@ style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></i=
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>k<=
-/span> =3D
-<span class=3DSpellE>i</span> * <span class=3DSpellE>i</span>;<o:p></o:p></=
-span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;&nbsp; </span><span
+style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>k</span> =3D <s=
+pan
+class=3DSpellE>i</span> * <span class=3DSpellE>i</span>;<o:p></o:p></span><=
+/i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1615,14 +1610,14 @@ style=3D'mso-bidi-font-style:normal'><span style=3D'color:blue'>k</span></i=
 ></span>?
 <o:p></o:p></span></p>
 
-<p class=3DMsoNormal><span style=3D'font-size:20.0pt'>That’s why R <span
-class=3DGramE>do</span> not support GOTO statement!<o:p></o:p></span></p>
+<p class=3DMsoNormal><span style=3D'font-size:20.0pt'>That is why R does not
+support GOTO statement!<o:p></o:p></span></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'><o:p>&nbsp;</o:p></sp=
 an></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'>In the March 1968<span
-class=3DGramE>, <span style=3D"mso-spacerun:yes">&nbsp;</span><span class=
+class=3DGramE>,<span style=3D"mso-spacerun:yes">&nbsp; </span><span class=
 =3DSpellE>Edsger</span></span>
 <span class=3DSpellE>Dijkstra</span> published a letter:<o:p></o:p></span><=
 /p>
@@ -1652,8 +1647,8 @@ me-font:
 minor-fareast'>&#12299;</span><span style=3D'font-size:20.0pt'><o:p></o:p><=
 /span></p>
 
-<p class=3DMsoNormal><span style=3D'font-size:20.0pt'>Link: <span
-style=3D"mso-spacerun:yes">&nbsp;</span><o:p></o:p></span></p>
+<p class=3DMsoNormal><span style=3D'font-size:20.0pt'>Link:<span
+style=3D"mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'><a
 href=3D"http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF">http://www.c=
@@ -1665,10 +1660,9 @@ an></p>
 <p class=3DMsoNormal><span class=3DMsoHyperlink><span style=3D'font-size:20=
 .0pt'><a
 href=3D"https://en.wikipedia.org/wiki/Considered_harmful">https://en.wikipe=
-dia.org/wiki/Considered_harmful</a><o:p></o:p></span></span></p>
+dia.org/wiki/Considered_harmful</a></span><o:p></o:p></span></p>
 
-<p class=3DMsoNormal><span style=3D'font-size:20.0pt'><o:p>&nbsp;</o:p></sp=
-an></p>
+<p class=3DMsoNormal><o:p>&nbsp;</o:p></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'><o:p>&nbsp;</o:p></sp=
 an></p>
@@ -1682,28 +1676,7 @@ an></p>
 
 </html>
 
-------=_NextPart_01D169AE.DF82EAE0
-Content-Location: file:///C:/E626E210/cpp_jump_files/item0001.xml
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/xml
-
-<b:Sources xmlns:b=3D"http://schemas.openxmlformats.org/officeDocument/2006=
-/bibliography" xmlns=3D"http://schemas.openxmlformats.org/officeDocument/20=
-06/bibliography" SelectedStyle=3D"/APA.XSL" StyleName=3D"APA"/>
-
-
-------=_NextPart_01D169AE.DF82EAE0
-Content-Location: file:///C:/E626E210/cpp_jump_files/props0002.xml
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/xml
-
-<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
-
-<ds:datastoreItem ds:itemID=3D"{6E4CD778-F3B5-734D-A0D3-2E38837F69AF}" xmln=
-s:ds=3D"http://schemas.openxmlformats.org/officeDocument/2006/customXml"><d=
-s:schemaRefs><ds:schemaRef ds:uri=3D"http://schemas.openxmlformats.org/offi=
-ceDocument/2006/bibliography"/></ds:schemaRefs></ds:datastoreItem>
-------=_NextPart_01D169AE.DF82EAE0
+------=_NextPart_01D169AF.D5D367D0
 Content-Location: file:///C:/E626E210/cpp_jump_files/themedata.xml
 Content-Transfer-Encoding: base64
 Content-Type: text/xml
@@ -1766,16 +1739,14 @@ AAAAAAAAAAAAAADTAgAAdGhlbWUvdGhlbWUvdGhlbWUxLnhtbFBLAQItABQABgAIAAAAIQAN0ZCf
 tgAAABsBAAAnAAAAAAAAAAAAAAAAACgKAAB0aGVtZS90aGVtZS9fcmVscy90aGVtZU1hbmFnZXIu
 eG1sLnJlbHNQSwUGAAAAAAUABQBdAQAAIwsAAAAA
 
-------=_NextPart_01D169AE.DF82EAE0
+------=_NextPart_01D169AF.D5D367D0
 Content-Location: file:///C:/E626E210/cpp_jump_files/filelist.xml
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/xml; charset="utf-8"
 
 <xml xmlns:o=3D"urn:schemas-microsoft-com:office:office">
  <o:MainFile HRef=3D"../cpp_jump.htm"/>
- <o:File HRef=3D"item0001.xml"/>
- <o:File HRef=3D"props0002.xml"/>
  <o:File HRef=3D"themedata.xml"/>
  <o:File HRef=3D"filelist.xml"/>
 </xml>
-------=_NextPart_01D169AE.DF82EAE0--
+------=_NextPart_01D169AF.D5D367D0--
