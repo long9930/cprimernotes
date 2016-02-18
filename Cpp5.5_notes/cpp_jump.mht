@@ -1,9 +1,9 @@
 MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_01D169AF.D5D367D0"
+Content-Type: multipart/related; boundary="----=_NextPart_01D169B0.77BAB3A0"
 
 This document is a Web archive file.  If you are seeing this message, this means your browser or editor doesn't support Web archive files.  For more information on the Web archive format, go to http://officeupdate.microsoft.com/office/webarchive.htm
 
-------=_NextPart_01D169AF.D5D367D0
+------=_NextPart_01D169B0.77BAB3A0
 Content-Location: file:///C:/E626E210/cpp_jump.htm
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/html; charset="macintosh"
@@ -27,17 +27,17 @@ xmlns:css=3D"http://macVmlSchemaUri" xmlns=3D"http://www.w3.org/TR/REC-html=
  <o:DocumentProperties>
   <o:Author>Wenlong Yuan</o:Author>
   <o:LastAuthor>Wenlong Yuan</o:LastAuthor>
-  <o:Revision>45</o:Revision>
-  <o:TotalTime>25</o:TotalTime>
+  <o:Revision>49</o:Revision>
+  <o:TotalTime>26</o:TotalTime>
   <o:Created>2016-02-17T22:57:00Z</o:Created>
-  <o:LastSaved>2016-02-18T00:20:00Z</o:LastSaved>
+  <o:LastSaved>2016-02-18T00:24:00Z</o:LastSaved>
   <o:Pages>3</o:Pages>
-  <o:Words>351</o:Words>
-  <o:Characters>2005</o:Characters>
+  <o:Words>371</o:Words>
+  <o:Characters>2117</o:Characters>
   <o:Company>TAMU</o:Company>
-  <o:Lines>16</o:Lines>
+  <o:Lines>17</o:Lines>
   <o:Paragraphs>4</o:Paragraphs>
-  <o:CharactersWithSpaces>2352</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>2484</o:CharactersWithSpaces>
   <o:Version>14.0</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -47,7 +47,6 @@ xmlns:css=3D"http://macVmlSchemaUri" xmlns=3D"http://www.w3.org/TR/REC-html=
 <link rel=3DthemeData href=3D"cpp_jump_files/themedata.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves/>
   <w:TrackFormatting/>
@@ -359,12 +358,26 @@ n"/>
 <!--
  /* Font Definitions */
 @font-face
+	{font-family:"Courier New";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
 	{font-family:Times;
 	panose-1:2 0 5 0 0 0 0 0 0 0;
 	mso-font-charset:0;
 	mso-generic-font-family:auto;
 	mso-font-pitch:variable;
 	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
 @font-face
 	{font-family:"\FF2D\FF33 \660E\671D";
 	mso-font-alt:"\FF2D\FF33 \660E\671D";
@@ -420,8 +433,7 @@ p.MsoNormal, li.MsoNormal, div.MsoNormal
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:minor-bidi;}
 h3
-	{mso-style-noshow:yes;
-	mso-style-priority:9;
+	{mso-style-priority:9;
 	mso-style-qformat:yes;
 	mso-style-link:"Heading 3 Char";
 	mso-margin-top-alt:auto;
@@ -470,7 +482,6 @@ p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
 	mso-bidi-theme-font:minor-bidi;}
 span.Heading3Char
 	{mso-style-name:"Heading 3 Char";
-	mso-style-noshow:yes;
 	mso-style-priority:9;
 	mso-style-unhide:no;
 	mso-style-locked:yes;
@@ -496,9 +507,20 @@ span.BalloonTextChar
 span.apple-converted-space
 	{mso-style-name:apple-converted-space;
 	mso-style-unhide:no;}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
+p.p, li.p, div.p
+	{mso-style-name:p;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 span.GramE
 	{mso-style-name:"";
 	mso-gram-e:yes;}
@@ -525,6 +547,88 @@ span.GramE
 	mso-paper-source:0;}
 div.WordSection1
 	{page:WordSection1;}
+ /* List Definitions */
+
+@list l0
+	{mso-list-id:2099711752;
+	mso-list-template-ids:-756353954;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
 -->
 </style>
 <!--[if gte mso 10]>
@@ -892,6 +996,52 @@ table.MsoTableMediumShading1Accent4EvenRow
 
 <div class=3DWordSection1>
 
+<h3 style=3D'margin-top:0in;margin-right:0in;margin-bottom:3.75pt;margin-le=
+ft:
+0in;background:white'><span style=3D'font-size:24.0pt;font-family:Verdana;
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New R=
+oman";
+color:black;font-weight:normal'>Reference: </span><span style=3D'font-size:=
+24.0pt;
+font-family:Verdana;mso-fareast-font-family:"Times New Roman";mso-bidi-font=
+-family:
+"Times New Roman";color:black'>C++ Primer, Fifth Edition<o:p></o:p></span><=
+/h3>
+
+<p class=3Dp style=3D'margin-top:0in;margin-right:0in;margin-bottom:2.25pt;
+margin-left:0in;mso-line-height-alt:14.4pt;background:white'><strong><span
+style=3D'font-size:24.0pt;font-family:Verdana;color:black'><span
+style=3D"mso-spacerun:yes">&nbsp;</span>By:</span></strong><span
+class=3Dapple-converted-space><b><span style=3D'font-size:24.0pt;font-famil=
+y:Verdana;
+mso-bidi-font-family:"Times New Roman";color:black'>&nbsp;</span></b></span=
+><span
+style=3D'font-size:24.0pt;font-family:Verdana;mso-bidi-font-family:"Times N=
+ew Roman";
+color:black'>Stanley B. Lippman; Josee Lajoie; Barbara E. Moo<o:p></o:p></s=
+pan></p>
+
+<p class=3Dp style=3D'margin-top:0in;margin-right:0in;margin-bottom:2.25pt;
+margin-left:0in;mso-line-height-alt:14.4pt;background:white'><strong><span
+style=3D'font-size:24.0pt;font-family:Verdana;color:black'><span
+style=3D"mso-spacerun:yes">&nbsp;</span>Publisher:</span></strong><span
+class=3Dapple-converted-space><b><span style=3D'font-size:24.0pt;font-famil=
+y:Verdana;
+mso-bidi-font-family:"Times New Roman";color:black'>&nbsp;</span></b></span=
+><span
+style=3D'font-size:24.0pt;font-family:Verdana;mso-bidi-font-family:"Times N=
+ew Roman";
+color:black'><span>Addison-Wesley Professional</span><o:p></o:p></span></p>
+
+<p class=3DMsoNormal style=3D'margin-top:9.0pt;margin-right:0in;margin-bott=
+om:8.0pt;
+margin-left:0in;page-break-after:avoid;mso-outline-level:3;background:white=
+'><b><span
+style=3D'font-size:21.5pt;font-family:Verdana;mso-fareast-font-family:"Time=
+s New Roman";
+mso-bidi-font-family:"Times New Roman";color:black'><o:p>&nbsp;</o:p></span=
+></b></p>
+
 <p class=3DMsoNormal style=3D'margin-top:9.0pt;margin-right:0in;margin-bott=
 om:8.0pt;
 margin-left:0in;page-break-after:avoid;mso-outline-level:3;background:white=
@@ -1040,11 +1190,10 @@ olid windowtext .5pt;
   padding:0in 5.4pt 0in 5.4pt;height:93.8pt'>
   <p class=3DMsoNormal align=3Dcenter style=3D'text-align:center;mso-yfti-c=
 nfc:132'><span
-  class=3DSpellE><span class=3DGramE><b><span style=3D'font-size:24.0pt;mso=
--bidi-font-size:
-  12.0pt'>goto</span></b></span></span><b><span style=3D'font-size:24.0pt;
-  mso-bidi-font-size:12.0pt'> <span class=3DSpellE>SomeFlag</span>;<o:p></o=
-:p></span></b></p>
+  class=3DGramE><b><span style=3D'font-size:24.0pt;mso-bidi-font-size:12.0p=
+t'>goto</span></b></span><b><span
+  style=3D'font-size:24.0pt;mso-bidi-font-size:12.0pt'> SomeFlag;<o:p></o:p=
+></span></b></p>
   </td>
   <td width=3D330 valign=3Dtop style=3D'width:330.4pt;border-top:none;borde=
 r-left:
@@ -1089,8 +1238,7 @@ statement.<o:p></o:p></span></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>#<span
-class=3DGramE>include</span> &lt;<span class=3DSpellE>iostream</span>&gt;<o=
-:p></o:p></span></i></p>
+class=3DGramE>include</span> &lt;iostream&gt;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
 rmal'><span
@@ -1098,35 +1246,32 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>using</span=
 ></i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
-12.0pt;color:blue'> namespace <span class=3DSpellE>std</span>;<o:p></o:p></=
-span></i></p>
+12.0pt;color:blue'> namespace std;<o:p></o:p></span></i></p>
 
-<p class=3DMsoNormal><span class=3DSpellE><span class=3DGramE><i style=3D'm=
-so-bidi-font-style:
-normal'><span style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blu=
-e'>int</span></i></span></span><i
+<p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
+rmal'><span
+style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>int</span><=
+/i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
 12.0pt;color:blue'> main() {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>int</span></span>
-<span class=3DSpellE>i</span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>int</span> i;<=
+o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>for</span> (<s=
-pan
-class=3DSpellE>i</span>=3D0; <span class=3DSpellE>i</span>&lt;100; <span
-class=3DSpellE>i</span>++) {<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>for</span> (i=
+=3D0;
+i&lt;100; i++) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>if=
 </span>
-(<span class=3DSpellE>i</span> =3D=3D 50) {<o:p></o:p></span></i></p>
+(i =3D=3D 50) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1144,18 +1289,15 @@ style=3D"mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>cout</span></span>
-&lt;&lt; &quot;For loop ended!&quot; &lt;&lt; <span class=3DSpellE>endl</sp=
-an>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>cout</span> &l=
+t;&lt;
+&quot;For loop ended!&quot; &lt;&lt; endl;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>cout</span></span>
-&lt;&lt; &quot;<span class=3DSpellE>i</span> =3D &quot; &lt;&lt; <span
-class=3DSpellE>i</span> &lt;&lt; <span class=3DSpellE>endl</span>;<o:p></o:=
-p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>cout</span> &l=
+t;&lt;
+&quot;i =3D &quot; &lt;&lt; i &lt;&lt; endl;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>}<o:p></o:p=
@@ -1186,15 +1328,13 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>for</span><=
 /i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
-12.0pt;color:blue'> (<span class=3DSpellE>i</span>=3D0; <span class=3DSpell=
-E>i</span>&lt;100;
-<span class=3DSpellE>i</span>++) {<o:p></o:p></span></i></p>
+12.0pt;color:blue'> (i=3D0; i&lt;100; i++) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>if=
 </span>
-(<span class=3DSpellE>i</span> =3D=3D 50) {<o:p></o:p></span></i></p>
+(i =3D=3D 50) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1208,12 +1348,10 @@ style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></i=
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DSpellE><=
-span
-class=3DGramE>cout</span></span> &lt;&lt; &quot;<span class=3DSpellE>i</spa=
-n> =3D
-&quot; &lt;&lt; <span class=3DSpellE>i</span> &lt;&lt; <span class=3DSpellE=
->endl</span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>co=
+ut</span>
+&lt;&lt; &quot;i =3D &quot; &lt;&lt; i &lt;&lt; endl;<o:p></o:p></span></i>=
+</p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1242,8 +1380,7 @@ an></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>#<span
-class=3DGramE>include</span> &lt;<span class=3DSpellE>iostream</span>&gt;<o=
-:p></o:p></span></i></p>
+class=3DGramE>include</span> &lt;iostream&gt;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
 rmal'><span
@@ -1251,24 +1388,20 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>using</span=
 ></i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
-12.0pt;color:blue'> namespace <span class=3DSpellE>std</span>;<o:p></o:p></=
-span></i></p>
+12.0pt;color:blue'> namespace std;<o:p></o:p></span></i></p>
 
-<p class=3DMsoNormal><span class=3DSpellE><span class=3DGramE><i style=3D'm=
-so-bidi-font-style:
-normal'><span style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blu=
-e'>int</span></i></span></span><i
+<p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
+rmal'><span
+style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>int</span><=
+/i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
-12.0pt;color:blue'> add(<span class=3DSpellE>int</span> a, <span class=3DSp=
-ellE>int</span>
-b) {<o:p></o:p></span></i></p>
+12.0pt;color:blue'> add(int a, int b) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>int</span></span>
-c =3D a + b;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>int</span> c =
+=3D a + b;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1284,31 +1417,28 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>}<o:p></o:p=
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><o:p>&nbsp;=
 </o:p></span></i></p>
 
-<p class=3DMsoNormal><span class=3DSpellE><span class=3DGramE><i style=3D'm=
-so-bidi-font-style:
-normal'><span style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blu=
-e'>int</span></i></span></span><i
+<p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
+rmal'><span
+style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>int</span><=
+/i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
 12.0pt;color:blue'> main() {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>int</span></span>
-a =3D 0;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>int</span> a =
+=3D 0;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>int</span></span>
-b =3D 1;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>int</span> b =
+=3D 1;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>int</span></span>
-c;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>int</span> c;<=
+o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1336,10 +1466,9 @@ c;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DSpellE><=
-span
-class=3DGramE>cout</span></span> &lt;&lt; c &lt;&lt; <span class=3DSpellE>e=
-ndl</span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>co=
+ut</span>
+&lt;&lt; c &lt;&lt; endl;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1359,20 +1488,18 @@ an></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:26.0pt;mso-bidi-font-size:12.=
 0pt'>5.5.4
-<span class=3DSpellE>goto</span><o:p></o:p></span></p>
+goto<o:p></o:p></span></p>
 
-<p class=3DMsoNormal><span style=3D'font-size:20.0pt'>A <span class=3DSpell=
-E>goto</span>
-statement unconditionally redirects the flow of statement to a specified pl=
-ace.<o:p></o:p></span></p>
+<p class=3DMsoNormal><span style=3D'font-size:20.0pt'>A goto statement
+unconditionally redirects the flow of statement to a specified place.<o:p><=
+/o:p></span></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'><o:p>&nbsp;</o:p></sp=
 an></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>#<span
-class=3DGramE>include</span> &lt;<span class=3DSpellE>iostream</span>&gt;<o=
-:p></o:p></span></i></p>
+class=3DGramE>include</span> &lt;iostream&gt;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
 rmal'><span
@@ -1380,22 +1507,20 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>using</span=
 ></i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
-12.0pt;color:blue'> namespace <span class=3DSpellE>std</span>;<o:p></o:p></=
-span></i></p>
+12.0pt;color:blue'> namespace std;<o:p></o:p></span></i></p>
 
-<p class=3DMsoNormal><span class=3DSpellE><span class=3DGramE><i style=3D'm=
-so-bidi-font-style:
-normal'><span style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blu=
-e'>int</span></i></span></span><i
+<p class=3DMsoNormal><span class=3DGramE><i style=3D'mso-bidi-font-style:no=
+rmal'><span
+style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'>int</span><=
+/i></span><i
 style=3D'mso-bidi-font-style:normal'><span style=3D'font-size:16.0pt;mso-bi=
 di-font-size:
 12.0pt;color:blue'> main() {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>int</span></span>
-<span class=3DSpellE>i</span>, j, k;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>int</span> i, =
+j, k;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1408,27 +1533,25 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><o:p>&nbsp;=
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DSpellE><span class=3D=
-GramE>place</span>_to_loop</span>:<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>place</span>_to=
+_loop:<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>for</span> (<s=
-pan
-class=3DSpellE>i</span>=3Dk; <span class=3DSpellE>i</span>&lt;100; <span
-class=3DSpellE>i</span>++) {<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>for</span> (i=
+=3Dk;
+i&lt;100; i++) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>if=
 </span>
-(<span class=3DSpellE>i</span>=3D=3D10) {<o:p></o:p></span></i></p>
+(i=3D=3D10) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
-class=3DSpellE><span class=3DGramE>goto</span></span> <span class=3DSpellE>=
-place_to_double</span>;<o:p></o:p></span></i></p>
+class=3DGramE>goto</span> place_to_double;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1438,16 +1561,14 @@ style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></i=
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp; </span><span
-style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>k</span> =3D <s=
-pan
-class=3DSpellE>i</span> * <span class=3DSpellE>i</span>;<o:p></o:p></span><=
-/i></p>
+style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>k</span> =3D i =
+* i;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>j<=
 /span> =3D
-<span class=3DSpellE>i</span> + k;<o:p></o:p></span></i></p>
+i + k;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1459,21 +1580,18 @@ style=3D"mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DSpellE><span class=3D=
-GramE>place</span>_to_square</span>:<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>place</span>_to=
+_square:<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>i</span></span>
-=3D <span class=3DSpellE>i</span> * <span class=3DSpellE>i</span>;<o:p></o:=
-p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>i</span> =3D i=
+ * i;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>goto</span></span>
-<span class=3DSpellE>place_to_loop</span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>goto</span>
+place_to_loop;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1481,14 +1599,13 @@ style=3D"mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DSpellE><span class=3D=
-GramE>place</span>_to_switch</span>:<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>place</span>_to=
+_switch:<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>i</span></span>
-=3D j;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>i</span> =3D j=
+;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1497,9 +1614,8 @@ style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>j</span> =3D k=
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>k</span> =3D <=
-span
-class=3DSpellE>i</span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>k</span> =3D i=
+;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><o:p>&nbsp;=
@@ -1507,15 +1623,13 @@ style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><o:p>&nbsp;=
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DSpellE><span class=3D=
-GramE>place</span>_to_double</span>:<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;</span><span class=3DGramE>place</span>_to=
+_double:<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>i</span></span>
-=3D <span class=3DSpellE>i</span> + <span class=3DSpellE>i</span>;<o:p></o:=
-p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>i</span> =3D i=
+ + i;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1524,10 +1638,9 @@ gt; k) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DSpellE><=
-span
-class=3DGramE>goto</span></span> <span class=3DSpellE>place_to_switch</span=
->;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>go=
+to</span>
+place_to_switch;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1537,10 +1650,9 @@ k) {<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DSpellE><=
-span
-class=3DGramE>goto</span></span> <span class=3DSpellE>place_to_square</span=
->;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>go=
+to</span>
+place_to_square;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1551,7 +1663,7 @@ style=3D"mso-spacerun:yes">&nbsp; </span>} <span class=3DGramE>else</span> =
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
 style=3D"mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=3DGramE>k<=
 /span> =3D
-<span class=3DSpellE>i</span> + j;<o:p></o:p></span></i></p>
+i + j;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1563,25 +1675,21 @@ style=3D"mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>cout</span></span>
-&lt;&lt; &quot;<span class=3DSpellE>i</span> =3D &quot; &lt;&lt; <span
-class=3DSpellE>i</span> &lt;&lt; <span class=3DSpellE>endl</span>;<o:p></o:=
-p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>cout</span> &l=
+t;&lt;
+&quot;i =3D &quot; &lt;&lt; i &lt;&lt; endl;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>cout</span></span>
-&lt;&lt; &quot;j =3D &quot; &lt;&lt; j &lt;&lt; <span class=3DSpellE>endl</=
-span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>cout</span> &l=
+t;&lt;
+&quot;j =3D &quot; &lt;&lt; j &lt;&lt; endl;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
-style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DSpellE><span class=
-=3DGramE>cout</span></span>
-&lt;&lt; &quot;k =3D &quot; &lt;&lt; j &lt;&lt; <span class=3DSpellE>endl</=
-span>;<o:p></o:p></span></i></p>
+style=3D"mso-spacerun:yes">&nbsp; </span><span class=3DGramE>cout</span> &l=
+t;&lt;
+&quot;k =3D &quot; &lt;&lt; j &lt;&lt; endl;<o:p></o:p></span></i></p>
 
 <p class=3DMsoNormal><i style=3D'mso-bidi-font-style:normal'><span
 style=3D'font-size:16.0pt;mso-bidi-font-size:12.0pt;color:blue'><span
@@ -1600,15 +1708,13 @@ an></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'>Any ideas of what are=
  the
-final values of <span class=3DSpellE><span class=3DGramE><i style=3D'mso-bi=
-di-font-style:
-normal'><span style=3D'color:blue'>i</span></i></span></span><span class=3D=
-GramE>, <i
-style=3D'mso-bidi-font-style:normal'><span style=3D'color:blue'>j</span></i=
->, and <i
-style=3D'mso-bidi-font-style:normal'><span style=3D'color:blue'>k</span></i=
-></span>?
-<o:p></o:p></span></p>
+final values of <span class=3DGramE><i style=3D'mso-bidi-font-style:normal'=
+><span
+style=3D'color:blue'>i</span></i>, <i style=3D'mso-bidi-font-style:normal'>=
+<span
+style=3D'color:blue'>j</span></i>, and <i style=3D'mso-bidi-font-style:norm=
+al'><span
+style=3D'color:blue'>k</span></i></span>? <o:p></o:p></span></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'>That is why R does not
 support GOTO statement!<o:p></o:p></span></p>
@@ -1617,10 +1723,8 @@ support GOTO statement!<o:p></o:p></span></p>
 an></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'>In the March 1968<span
-class=3DGramE>,<span style=3D"mso-spacerun:yes">&nbsp; </span><span class=
-=3DSpellE>Edsger</span></span>
-<span class=3DSpellE>Dijkstra</span> published a letter:<o:p></o:p></span><=
-/p>
+class=3DGramE>,<span style=3D"mso-spacerun:yes">&nbsp; </span>Edsger</span>
+Dijkstra published a letter:<o:p></o:p></span></p>
 
 <p class=3DMsoNormal><span style=3D'font-size:20.0pt'><a
 href=3D"http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF">Go-to statem=
@@ -1676,7 +1780,7 @@ an></p>
 
 </html>
 
-------=_NextPart_01D169AF.D5D367D0
+------=_NextPart_01D169B0.77BAB3A0
 Content-Location: file:///C:/E626E210/cpp_jump_files/themedata.xml
 Content-Transfer-Encoding: base64
 Content-Type: text/xml
@@ -1739,7 +1843,7 @@ AAAAAAAAAAAAAADTAgAAdGhlbWUvdGhlbWUvdGhlbWUxLnhtbFBLAQItABQABgAIAAAAIQAN0ZCf
 tgAAABsBAAAnAAAAAAAAAAAAAAAAACgKAAB0aGVtZS90aGVtZS9fcmVscy90aGVtZU1hbmFnZXIu
 eG1sLnJlbHNQSwUGAAAAAAUABQBdAQAAIwsAAAAA
 
-------=_NextPart_01D169AF.D5D367D0
+------=_NextPart_01D169B0.77BAB3A0
 Content-Location: file:///C:/E626E210/cpp_jump_files/filelist.xml
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/xml; charset="utf-8"
@@ -1749,4 +1853,4 @@ Content-Type: text/xml; charset="utf-8"
  <o:File HRef=3D"themedata.xml"/>
  <o:File HRef=3D"filelist.xml"/>
 </xml>
-------=_NextPart_01D169AF.D5D367D0--
+------=_NextPart_01D169B0.77BAB3A0--
