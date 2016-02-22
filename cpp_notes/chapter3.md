@@ -352,5 +352,118 @@ cout << ivec2[10];     // error: ivec2 has elements 0 . . . 9
       
 
 
+## 3.6 Multidimensional Arrays
+Strictly speaking, there are no multidimensional arrays in C++. What are commonly
+referred to as multidimensional arrays are actually arrays of arrays.
+
+
+```cpp
+int ia[3][4]; // array of size 3; each element is an array of ints of size 4
+// array of size 10; each element is a 20-element array whose elements are arrays of 30
+ints
+int arr[10][20][30] = {0}; // initialize all elements to 0
+```
+###Initializing the Elements of a Multidimensional Array
+```cpp
+int ia[3][4] = { // three elements; each element is an array of size 4
+{0, 1, 2, 3}, // initializers for the row indexed by 0
+{4, 5, 6, 7}, // initializers for the row indexed by 1
+{8, 9, 10, 11} // initializers for the row indexed by 2
+};
+
+// equivalent initialization without the optional nested braces for each row
+int ia[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+
+// explicitly initialize only element 0 in each row
+int ia[3][4] = {{ 0 }, { 4 }, { 8 }};
+// explicitly initialize row 0; the remaining elements are value initialized
+int ix[3][4] = {0, 3, 6, 9};
+```
+###Subscripting a Multidimensional Array
+
+```cpp
+// assigns the first element of arr to the last element in the last row of ia
+ia[2][3] = arr[0][0][0];
+int (&row)[4] = ia[1]; // binds row to the second four-element array in ia
+```
+In the second example, we define row as a reference to an array of four ints. We
+bind that reference to the second row in ia.
+
+```cpp
+constexpr size_t rowCnt = 3, colCnt = 4;
+int ia[rowCnt][colCnt]; // 12 uninitialized elements
+// for each row
+for (size_t i = 0; i != rowCnt; ++i) {
+// for each column within the row
+for (size_t j = 0; j != colCnt; ++j) {
+// assign the element's positional index as its value
+ia[i][j] = i * colCnt + j;
+	}
+}
+```
+
+###Using a Range for with Multidimensional Arrays
+
+```cpp
+size_t cnt = 0;
+for (auto &row : ia) // for every element in the outer array
+for (auto &col : row) { // for every element in the inner array
+col = cnt; // give this element the next value
+++cnt; // increment cnt
+}
+```
+```cpp
+for (const auto &row : ia) //Why const, for every element in the outer array
+for (auto col : row) // for every element in the inner array
+cout << col << endl;
+```
+###Pointers and Multidimensional Arrays
+```cpp
+//The parentheses in this declaration are essential:
+int *ip[4]; // array of pointers to int
+int (*ip)[4]; // pointer to an array of four ints
+```
+
+```cpp
+// p points to an array of four ints
+for (auto p = ia; p != ia + 3; ++p) {
+// q points to the first element of an array of four ints; that is, q points to an
+int
+for (auto q = *p; q != *p + 4; ++q)
+cout << *q << ' ';
+cout << endl;
+}
+```	
+The outer for loop starts by initializing p to point to the first array in ia. That loop
+continues until we’ve processed all three rows in ia. The increment, ++p, has the
+effect of moving p to point to the next row (i.e., the next element) in ia.
+
+The inner for loop prints the values of the inner arrays. It starts by making q point
+to the first element in the array to which p points. The result of *p is an array of four
+ints. As usual, when we use an array, it is converted automatically to a pointer to its
+first element. The inner for loop runs until we’ve processed every element in the
+inner array. 
+
+```cpp
+\\More easily
+// p points to the first array in ia
+for (auto p = begin(ia); p != end(ia); ++p) {
+// q points to the first element in an inner array
+for (auto q = begin(*p); q != end(*p); ++q)
+cout << *q << ' '; // prints the int value to which q
+points
+cout << endl;
+}
+```
+
+
+
+
+
+
+
+
+
+
 
   
