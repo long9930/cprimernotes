@@ -5,23 +5,12 @@ Reading Note of C++ Primer
 
 ## Schedule
 
-### March 2
 
-* C++ Primer C7.1, Shiyuan
-* C++ Primer C7.2, Xiaomeng 
-* C++ Primer C7.3, Yunfeng
-* C++ Primer C7.4, Xiaomeng
-
-
-### Feb 29
-
-Algorithm, Autotool
 
 ### Feb 24
-* C++ Primer C6.2, 
-* C++ Primer C6.3, 
-* C++ Primer C6.4, 
 
+* Introduction to Algorithm, 3rd Edition. S4.1 The maximum-subarray problem, Zhenfeng  
+	
 
 ### Feb 22
 * C++ Primer C3.4, Shiyuan

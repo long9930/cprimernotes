@@ -10,6 +10,8 @@ int main( int argc, char ** argv )
     counter(newCount);
     printf("%d %d %d %d \n", newCount[0], newCount[1],
 	   newCount[2], newCount[3]);
+
+    for
     
     //printf( "%d %d %d %d \n", fee_count, fie_count,
     //	    foe_count, fum_count );
@@ -18,3 +20,5 @@ int main( int argc, char ** argv )
 
 
 
+
+    
