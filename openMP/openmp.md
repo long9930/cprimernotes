@@ -1,6 +1,22 @@
 #OpenMP
 
 
+INSTALL gcc and MPICH from macport, https://www.macports.org/.
+
+```bash
+> sudo macport install gcc48
+> sudo macport install mpich-devel-gcc48
+> port select --list gcc
+Available versions for gcc:
+	dragonegg-3.3-gcc48
+	mp-gcc48 (active)
+	mp-gcc5
+	none
+> sudo port select --set gcc mp-gcc48
+```
+
+Another option is to install through homebrew. http://brew.sh/
+
 ## Parallel Region
 
 The code in the parallel construct will be executed repeatedly across threads. But the order of the exucutation can not be expected.

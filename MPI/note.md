@@ -1,5 +1,9 @@
 # MPI
 
+* open mpi, https://www.open-mpi.org/
+* MPICH, https://www.mpich.org/
+
+
 ## Hellow World
 
 #### mpieg01.c
