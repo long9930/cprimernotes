@@ -4,8 +4,8 @@
 INSTALL gcc and MPICH from macport, https://www.macports.org/.
 
 ```bash
-> sudo macport install gcc48
-> sudo macport install mpich-devel-gcc48
+> sudo port install gcc48
+> sudo port install mpich-devel-gcc48
 > port select --list gcc
 Available versions for gcc:
 	dragonegg-3.3-gcc48

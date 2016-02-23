@@ -6,7 +6,7 @@
 * C++ Primer C3.5, Xiaomeng
 * C++ Primer C3.6, Yunfeng
 * Introduction to Algorithm, 3rd Edition. S4.2, Liang
-* Introduction to Algorithm, 3rd Edition. S4.3~4.5, 
+* Introduction to Algorithm, 3rd Edition. S4.3~4.5, Xi
 
 ### March 7
 * C++ Primer C6.2, Wenlong G
