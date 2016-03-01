@@ -349,7 +349,322 @@ cout << ivec[0];       // error: ivec has no elements!
 vector<int> ivec2(10); // vector with ten elements
 cout << ivec2[10];     // error: ivec2 has elements 0 . . . 9
 ```
-      
+### 3.5.1 Defining and Initializing Build-in Arrays
+**Arrays**: 
+
+* Compound type; 
+* Form: a[d] a is the name and d is the dimension. d must be **constant  expression**.
+* Specify a type for array when define an array, cannot use *auto*.
+* Array holds objects, thus no arrays of references.
+
+#### Explicity Initializing Array Elements
+* we can omit the dimension. 
+
+```cpp
+int a2[] = {0, 1, 2}// an array of dimension 3
+```
+
+* If we specify a dimension, the number of initializers must not exceed the specified size.
+
+```cpp
+string a4[3] = {"hi", "bye"}; // same as a4[] =  {"hi", "bye", ""}
+int a5[2] = {0,1,2};          // error: too many initializers
+```
+#### Character Arrays Are Special
+ * We can initialize such arrays from a string literal.
+ * string literals end with a null character.
+
+ ```cpp
+ char a3[] = "C++";                 // null terminator added automatically
+const char a4[6] = "Daniel";       // error: no space for the null!
+```
+#### No copy or Assignment.
+#### Understanding Complicated Array Declarations
+```cpp
+int *ptrs[10];            //  ptrs is an array of ten pointers to int
+int &refs[10] = /* ? */;  //  error: no arrays of references
+int (*Parray)[10] = &arr; //  Parray points to an array of ten ints
+int (&arrRef)[10] = arr;  //  arrRef refers to an array of ten ints
+int *(&arry)[10] = ptrs; // arry is a reference to an array of ten pointers
+```
+### 3.5.2 Accessing the Elements of an Array
+* we can use a range for or the subscript operator to access elements of an array.
+* the indices start at 0.
+* When we use a variable to subscript an array, we normally should define that variable to have type size$\_$t.The size$\_$t type is defined in the *cstddef* header.
+
+```cpp
+// count the number of grades by clusters of ten: 0--9, 10--19, ... 90--99, 100
+unsigned scores[11] = {}; // 11 buckets, all value initialized to 0
+unsigned grade;
+while (cin >> grade) {
+    if (grade <= 100)
+        ++scores[grade/10]; // increment the counter for the current cluster
+}
+```
+
+**for**
+
+```cpp
+for (auto i : scores)      // for each counter in scores
+    cout << i << " ";      // print the value of that counter
+cout << endl;
+```
+
+### 3.5.3 Pointers and Array
+* When we use an array, the compiler automatically substitutes a pointer to the first element. 
+* The operations on arrays are often operations on pointers.
+
+```cpp
+string nums[] = {"one", "two", "three"};  // array of strings
+string *p = &nums[0];   // p points to the first element in nums
+
+string *p2 = nums;      // equivalent to p2 = &nums[0]
+```
+```cpp
+int ia[] = {0,1,2,3,4,5,6,7,8,9}; // ia is an array of ten ints
+auto ia2(ia); // ia2 is an int* that points to the first element in ia
+```
+#### Pointers are Iterators & The library begin and end function 
+* Pointers to array elements support the same operations as iterators on vectors or strings. (increment)
+
+```cpp
+int arr[] = {0,1,2,3,4,5,6,7,8,9};
+int *p = arr; // p points to the first element in arr
+++p;          // p points to arr[1]
+
+int *e = &arr[10]; // pointer just past the last element in arr
+
+for (int *b = arr; b != e; ++b)
+    cout << *b << endl; // print the elements in arr
+    
+    // pbeg points to the first and pend points just past the last element in arr
+int *pbeg = begin(arr),  *pend = end(arr);
+// find the first negative element, stopping if we've seen all the elements
+while (pbeg != pend && *pbeg >= 0)
+    ++pbeg;
+```
+
+#### Pointer Arithmetic
+* When we add (or subtract) an integral value to (or from) a pointer, the result is a new pointer.
+
+```cpp
+constexpr size_t sz = 5;
+int arr[sz] = {1,2,3,4,5};
+int *ip = arr;     // equivalent to int *ip = &arr[0]
+int *ip2 = ip + 4; // ip2 points to arr[4], the last element in arr
+```
+* Subtracting two pointers gives us the distance between those pointers.
+
+```cpp
+auto n = end(arr) - begin(arr); // n is 5, the number of elements in arr
+```
+* Relational operators: 
+
+```cpp
+int *b = arr, *e = arr + sz;
+while (b < e) {
+    // use *b
+    ++b;
+}
+
+int i = 0, sz = 42;
+int *p = &i, *e = &sz;
+// undefined: p and e are unrelated; comparison is meaningless!
+while (p < e)
+```
+
+#### Interaction between dereference and pointer arithmetic
+``` cpp
+int ia[] = {0,2,4,6,8}; // array with 5 elements of type int
+int last = *(ia + 4); // ok: initializes last to 8, the value of ia[4]
+
+last = *ia + 4;  // ok: last = 4, equivalent to ia[0] + 4
+```
+
+#### Subscript and Pointers
+
+```cpp
+int ia[] = {0,2,4,6,8};  // array with 5 elements of type int
+
+int i = ia[2];  // ia is converted to a pointer to the first element in ia
+// ia[2] fetches the element to which (ia + 2) points
+
+int *p = ia;    // p points to the first element in ia
+i = *(p + 2);   // equivalent to i = ia[2]
+```
+
+### 3.5.4 C-Style Character Strings
+在c++中，以数组的方式定义字符串，该字符串储存在数组中，并以null结束。
+原本可用于字符串的function现在不可用， 要是用c －library 的函数来进行相同的运算。
+
+* store in character array
+* end with null
+
+```cpp
+char ca[] = {'C', '+', '+'};  // not null terminated
+cout << strlen(ca) << endl;   // disaster: ca isn't null terminated
+```
+**function**
+![](1.jpg)
+**Comparison & Concatenating & Coping**
+
+* Remember that when we use an array, we are really using a pointer to the first element in the array
+
+```cpp
+const char ca1[] = "A string example";
+const char ca2[] = "A different string";
+if (ca1 < ca2)  // undefined: compares two unrelated addresses
+```
+* To compare two strings
+
+```cpp
+if (strcmp(ca1, ca2) < 0) // same effect as string comparison s1 < s2
+```
+* To concatenate or copy
+
+```cpp
+strcpy(largeStr, ca1);     // copies ca1 into largeStr
+strcat(largeStr, " ");     // adds a space at the end of largeStr
+strcat(largeStr, ca2);     // concatenates ca2 onto largeStr
+```
+
+**It's more efficient to use library strings rather that C-style strings**
+
+### 3.5.5 Interfacing to Older Code
+**Mixing Library strings and C-style Strings**
+
+* We can use a null-terminated character array to initialize or assign a string.
+* We can use a null-terminated character array as one operand (but not both operands) to the string addition operator or as the right-hand operand in the string compound assignment (+=) operator.
+
+```cpp
+char *str = s; // error: can't initialize a char* from a string
+const char *str = s.c_str(); // ok
+```
+**Using an Array to Initialize a vector**
+
+```cpp
+int int_arr[] = {0, 1, 2, 3, 4, 5};
+// ivec has six elements; each is a copy of the corresponding element in int_arr
+vector<int> ivec(begin(int_arr), end(int_arr));
+
+// copies three elements: int_arr[1], int_arr[2], int_arr[3]
+vector<int> subVec(int_arr + 1, int_arr + 4);
+```
+
+**Modern C++ programs should use vectors and iterators instead of built-in arrays and pointers, and use strings rather than C-style array-based character strings.**      
+
+
+## 3.6 Multidimensional Arrays
+Strictly speaking, there are no multidimensional arrays in C++. What are commonly
+referred to as multidimensional arrays are actually arrays of arrays.
+
+
+```cpp
+int ia[3][4]; // array of size 3; each element is an array of ints of size 4
+// array of size 10; each element is a 20-element array whose elements are arrays of 30
+ints
+int arr[10][20][30] = {0}; // initialize all elements to 0
+```
+###Initializing the Elements of a Multidimensional Array
+```cpp
+int ia[3][4] = { // three elements; each element is an array of size 4
+{0, 1, 2, 3}, // initializers for the row indexed by 0
+{4, 5, 6, 7}, // initializers for the row indexed by 1
+{8, 9, 10, 11} // initializers for the row indexed by 2
+};
+
+// equivalent initialization without the optional nested braces for each row
+int ia[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+
+// explicitly initialize only element 0 in each row
+int ia[3][4] = {{ 0 }, { 4 }, { 8 }};
+// explicitly initialize row 0; the remaining elements are value initialized
+int ix[3][4] = {0, 3, 6, 9};
+```
+###Subscripting a Multidimensional Array
+
+```cpp
+// assigns the first element of arr to the last element in the last row of ia
+ia[2][3] = arr[0][0][0];
+int (&row)[4] = ia[1]; // binds row to the second four-element array in ia
+```
+In the second example, we define row as a reference to an array of four ints. We
+bind that reference to the second row in ia.
+
+```cpp
+constexpr size_t rowCnt = 3, colCnt = 4;
+int ia[rowCnt][colCnt]; // 12 uninitialized elements
+// for each row
+for (size_t i = 0; i != rowCnt; ++i) {
+// for each column within the row
+for (size_t j = 0; j != colCnt; ++j) {
+// assign the element's positional index as its value
+ia[i][j] = i * colCnt + j;
+	}
+}
+```
+
+###Using a Range for with Multidimensional Arrays
+
+```cpp
+size_t cnt = 0;
+for (auto &row : ia) // for every element in the outer array
+for (auto &col : row) { // for every element in the inner array
+col = cnt; // give this element the next value
+++cnt; // increment cnt
+}
+```
+```cpp
+for (const auto &row : ia) //Why const, for every element in the outer array
+for (auto col : row) // for every element in the inner array
+cout << col << endl;
+```
+###Pointers and Multidimensional Arrays
+```cpp
+//The parentheses in this declaration are essential:
+int *ip[4]; // array of pointers to int
+int (*ip)[4]; // pointer to an array of four ints
+```
+
+```cpp
+// p points to an array of four ints
+for (auto p = ia; p != ia + 3; ++p) {
+// q points to the first element of an array of four ints; that is, q points to an
+int
+for (auto q = *p; q != *p + 4; ++q)
+cout << *q << ' ';
+cout << endl;
+}
+```	
+The outer for loop starts by initializing p to point to the first array in ia. That loop
+continues until we’ve processed all three rows in ia. The increment, ++p, has the
+effect of moving p to point to the next row (i.e., the next element) in ia.
+
+The inner for loop prints the values of the inner arrays. It starts by making q point
+to the first element in the array to which p points. The result of *p is an array of four
+ints. As usual, when we use an array, it is converted automatically to a pointer to its
+first element. The inner for loop runs until we’ve processed every element in the
+inner array. 
+
+```cpp
+\\More easily
+// p points to the first array in ia
+for (auto p = begin(ia); p != end(ia); ++p) {
+// q points to the first element in an inner array
+for (auto q = begin(*p); q != end(*p); ++q)
+cout << *q << ' '; // prints the int value to which q
+points
+cout << endl;
+}
+```
+
+
+
+
+
+
+
+
 
 
 

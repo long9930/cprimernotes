@@ -1,24 +1,33 @@
-# cprimernotes
-Reading Note of C++ Primer
-
-
 
 ## Schedule
 
+### Feb 29
+* C++ Primer C3.4, Shiyuan
+* C++ Primer C3.5, Xiaomeng
+* C++ Primer C3.6, Yunfeng
+* Introduction to Algorithm, 3rd Edition. S4.2, Liang
+* Introduction to Algorithm, 3rd Edition. S4.3~4.5, Xi
 
-### Feb 12
-* C++ Primer C5.4, Xiao
-* C++ Primer C5.5, Yunfeng
-* C++ Primer C5.6, Zhenfeng
-* Leetcode Problem 5, Zhenfeng
+### March 7
+* C++ Primer C6.2, Wenlong G
+* C++ Primer C6.3, Wenlong Y
+* C++ Primer C6.4, Zhongqu
+* C++ Primer C6.5, Wenlong Y
+* C++ Primer C6.6, Zhenfeng
+* C++ Primer C6.7, Xiao
 
-### Feb 10
-* C++ Primer C4.4, Xiao
-* C++ Primer C4.5 C4.6, Zhongqu
-* C++ Primer C4.7, Yang
-* C++ Primer C4.9~C4.11, Wenlong
+### March 23 (Wednesday)
 
-### Feb 8
-* Aquamacs, Shiyuan
-* Github, Kejun
-* Makefile Chapter 2, Kejun and Shiyuan
+http://www.rcpp.org/
+
+* Rcpp, Xiao
+* RcppArmadillo, Kejun
+* RcppEigen, Shiyuan
+* RInside, Wenlong Y
+
+### March 28
+* C++ Class I, [web link](http://www.cplusplus.com/doc/tutorial/classes/), Liang
+* C++ Class II, [web link](http://www.cplusplus.com/doc/tutorial/templates/), Zhongqu
+* C++ Class Special Members, [web link](http://www.cplusplus.com/doc/tutorial/classes2/), Xiaomeng
+* C++ Class Inheritance, [web link](http://www.cplusplus.com/doc/tutorial/inheritance/), Yunfeng
+* C++ Class Polymorphism, [web link](http://www.cplusplus.com/doc/tutorial/polymorphism/), Zhenfeng

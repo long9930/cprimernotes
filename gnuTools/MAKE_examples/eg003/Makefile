@@ -1,6 +1,7 @@
 VPATH = src
 CPPFLAGS = -I include
 
+
 count_words: count_words.o counter.o lexer.o -ll
 	gcc $(CPPFLAGS) $^ -o $@
 
