@@ -1,4 +1,116 @@
-### 6.7. Pointers to Functions XW ###
+## 6.4. Overloaded Functions ##
+**Definition**: Functions that have the same name but different parameter lists and that appear in the sam e scope are **overloaded**.
+
+~~~cpp
+void print(const char *cp);
+void print(const int *beg, const int *end);
+void print(const int ia[], size-t size);
+
+int j[2] = {0,1};
+print("Hello World");        // calls print(const char*)
+print(j, end(j) - begin(j)); // calls print(const int*, size_t)
+print(begin(j), end(j));     // calls print(const int*, const int*)
+
+~~~
+
+These functions perform the same general action but apply to different parameter types. When we call these functions, the compiler can deduce which funciton we want based on the argument type we pass.
+
+**Advantages**: eliminate the need to invent and remember names that exist only to help the compiler gigure out which function to call.
+
+we should only overload operations that actually do similar things.
+
+###Define Overloaded Functions###
+Overloaded functions must differ in the **number** or the **types** of their parameters.
+
+**Return types** is **not** considered as a difference!!!
+
+~~~cpp
+Record lookup(const Account&);  // find by Account
+Record lookup(const Phone&);    // find by Phone
+Record lookup(const Name&);     // find by Name
+
+Account acct;
+Phone phone;
+Record r1 = lookup(acct);  // call version that takes an Account
+Record r2 = lookup(phone); // call version that takes a Phone
+
+bool lookup(const Account&);   // error: only the return type is different
+~~~
+
+###Determining Whether Two Parameter Types Differ###
+Two parameter lists can be identical, even if they don't look the same:
+
+~~~cpp
+// each pair declares the same function
+Record lookup(const Account &acct);
+Record lookup(const Account&); // parameter names are ignored
+
+typedef Phone Telno;
+Record lookup(const Phone&);
+Record lookup(const Telno&); // Telno and Phone are the same type
+~~~
+
+###Top-level `cosnt` and low-level `const` in overloaded functions###
+We use the term **top-level const** to indicate that the pointer or variable itself is a const. When a pointer can point to a const object, we refer to that const as a **low-level const**.
+
+~~~cpp
+int i = 0;
+int *const p1 = &i;  // we can't change the value of p1; const is top-level
+const int ci = 42;   // we cannot change ci; const is top-level
+const int *p2 = &ci; // we can change p2; const is low-level
+const int *const p3 = p2; // right-most const is top-level, left-most is not
+const int &r = ci;  // const in reference types is always low-level
+~~~
+
+A parameter that has a top-level const is indistinguishable from one without a top-level const, because the top-level const attribute is not passed when variable is copied.
+
+~~~cpp
+Record lookup(Phone);
+Record lookup(const Phone);   // redeclares Record lookup(Phone)
+
+Record lookup(Phone*);
+Record lookup(Phone* const);  // redeclares Record lookup(Phone*)
+~~~
+
+Low-level const can be distinguished:
+
+~~~cpp
+Record lookup(Account&);       // function that takes a reference to Account
+Record lookup(const Account&); // new function that takes a const reference
+
+Record lookup(Account*);       // new function, takes a pointer to Account
+Record lookup(const Account*); // new function, takes a pointer to const
+~~~
+###Calling an Overloaded Function###
+**Function matching** (also known as overload resolution) is the process by which a particular function call is associated with a specific function from a set of overloaded functions. The compiler determines which function to call by comparing the arguments in the call with the parameters offered by each function in the overload set.
+
+**Possible Outcomes**:
+
+* The compiler finds exactly ***one function*** that is a best match for the actual arguments and generates code to call that function.
+* There is ***no function*** with parameters that match the arguments in the call, in which case the compiler issues an error message that there was no match.
+* There is ***more than one function*** that matches and none of the matches is clearly best. This case is also an error; it is an ambiguous call.
+
+###Overloading and Scope###
+If we declare a name in an inner scope, that name hides uses of that name declared in an outer scope. Names do not overload across scopes:
+
+~~~cpp
+string read();
+void print(const string &);
+void print(double);   // overloads the print function
+void fooBar(int ival)
+{
+    bool read = false; // new scope: hides the outer declaration of read
+    string s = read(); // error: read is a bool variable, not a function
+    // bad practice: usually it's a bad idea to declare functions at local scope
+    void print(int);  // new scope: hides previous instances of print
+    print("Value: "); // error: print(const string &) is hidden
+    print(ival);      // ok: print(int) is visible
+    print(3.14);      // ok: calls print(int); print(double) is hidden
+}
+~~~
+
+
+## 6.7. Pointers to Functions XW ##
 
 * A function pointer is a pointer that denotes a function rather than an object. 
 * A function pointer points to a particular type, determined by its return type and the types of its parameters. 
