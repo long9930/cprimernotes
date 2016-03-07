@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>cpp_notes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<div class="top-bar">
+<div class="top-bar-left">
+<ul class="menu">
+<li class="menu-text">C++ Primer 6.5</li>
+<li><a href="#">6.3</a></li>
+<li><a href="#"></a></li>
+</ul>
+</div>
+<div class="top-bar-right">
+<ul class="menu">
+<li><a href="#">Monday</a></li>
+<li><a href="#">March 7</a></li>
+<li><a href="#">2016</a></li>
+<li><a href="#"></a></li>
+</ul>
+</div>
+</div>
+ 
+<div class="callout large">
+<div class="row column text-center">
+<h1>Features for Specialized Uses</h1>
+<a href="#" class="button large">function default arguments</a>
+<a href="#" class="button large">inline/constexpr functions</a>
+<a href="#" class="button large">assert</a>
+</div>
+</div>
+<div class="row">
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f1.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(1) In C++, default arguments are coded in the function definations.</h2>
+<p></p>
+</div>
+<hr>
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f2.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(2) inline/constexpr functions: tell the compiler to expand the function
+  in line.<br>
+  The cout part is compiled as   </h2> <h4>
+  cout << (i > 0? "hello" : "world") << endl;
+</h4>
+<p></p>
+</div>
+<hr>
+
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f3.png" width="600px;">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(3) assert(expr) will abort the program at runtime if expr==false.
+  <br>
+  Usually used as a quick debug.</h2>
+<p></p>
+</div>
+<hr>
+
+
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f4.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(4) Turn off the debug mode:<br>
+  #define NDEBUG before #include &lt;cassert&gt;<br>
+  assert() will be ignored during compile.
+  </h2>
+<p></p>
+</div>
+<hr>
+
+
+
+<hr>
+<div class="row column">
+
+<hr>
+<div class="row column">
+<ul class="menu">
+</ul>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
