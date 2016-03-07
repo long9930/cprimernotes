@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>cpp_notes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<div class="top-bar">
+<div class="top-bar-left">
+<ul class="menu">
+<li class="menu-text">C++ Primer 6.3</li>
+<li><a href="#">6.5</a></li>
+<li><a href="#"></a></li>
+</ul>
+</div>
+<div class="top-bar-right">
+<ul class="menu">
+<li><a href="#">Monday</a></li>
+<li><a href="#">March 7</a></li>
+<li><a href="#">2016</a></li>
+<li><a href="#"></a></li>
+</ul>
+</div>
+</div>
+ 
+<div class="callout large">
+<div class="row column text-center">
+<h1>C++ Return Statement</h1>
+<p class="lead">A command that terminates current function and return
+  to the position where the function was called.</p>
+<a href="#" class="button large">return;</a>
+<a href="#" class="button large">return expression;</a>
+</div>
+</div>
+<div class="row">
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f1.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(1) Important: the DATA TYPE of the returned value MUST(?) be specified
+  at the begining of the function!</h2>
+<p></p>
+</div>
+<hr>
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f2.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(2) How about return NOTHING?<br>
+  A special type VOID can be used.</h2>
+<p></p>
+</div>
+<hr>
+
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f3.png" width="600px;">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(3) You should NOT use void type for main function.</h2>
+<p></p>
+</div>
+<hr>
+
+
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f4.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(4) Where to put the return statement?<br>
+  Anywhere. But be aware what you are doing.</h2>
+<p></p>
+</div>
+<hr>
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f5.png">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(5) Return a reference or a pointer?<br>
+  It can be done, but not encouraged nowadays. If you cannot prove
+  returning a pointer/reference is faster than returning a value, then
+  return a value.</h2>
+<p></p>
+</div>
+<hr>
+
+
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="figs/e1f6.png">
+ <h3> `auto` can figure out what the data type should be automatically.</h3>
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2>(6) There are always something NEW!<br>
+  In C++11, we can put the DATA TYPE of the returned value at the end
+  of function declaration. This is called `Trailing Return Type`,
+  which saves a little bit coding, but makes your function looks clean
+  and neat when working with objective projects.</h2>
+<p></p>
+</div>
+<hr>
+
+
+
+
+
+<hr>
+<div class="row column">
+
+<hr>
+<div class="row column">
+<ul class="menu">
+</ul>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
